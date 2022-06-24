@@ -23,6 +23,14 @@ CREATE DOMAIN _RATE SMALLINT CHECK ( VALUE > 0 AND VALUE <= 100);
 ------------
 ---TABLES---
 ------------
+CREATE TABLE coach
+(
+    coach_id SERIAL,
+    name     VARCHAR(255) NOT NULL,
+    dob      DATE         NOT NULL,
+    PRIMARY KEY (coach_id)
+);
+
 CREATE TABLE club
 (
     club_id  SERIAL,
@@ -31,6 +39,20 @@ CREATE TABLE club
     name     VARCHAR(255) NOT NULL,
     PRIMARY KEY (club_id),
     FOREIGN KEY (coach_id) REFERENCES coach (coach_id)
+);
+
+CREATE TABLE footballer
+(
+    footballer_id SERIAL,
+    name          VARCHAR(255) NOT NULL,
+    nationality   VARCHAR(64)  NOT NULL,
+    height        INTEGER      NOT NULL,
+    weight        INTEGER      NOT NULL,
+    dob           DATE         NOT NULL,
+    stronger_foot CHAR         NOT NULL,
+    club_id       SERIAL,
+    PRIMARY KEY (footballer_id),
+    FOREIGN KEY (club_id) REFERENCES club (club_id)
 );
 
 CREATE TABLE club_league
@@ -45,28 +67,6 @@ CREATE TABLE club_trophy
     club_id SERIAL,
     name    TEXT,
     date    DATE,
-    FOREIGN KEY (club_id) REFERENCES club (club_id)
-);
-
-CREATE TABLE coach
-(
-    coach_id SERIAL,
-    name     VARCHAR(255) NOT NULL,
-    dob      DATE         NOT NULL,
-    PRIMARY KEY (coach_id)
-);
-
-CREATE TABLE footballer
-(
-    footballer_id SERIAL,
-    name          VARCHAR(255) NOT NULL,
-    nationality   VARCHAR(64)  NOT NULL,
-    height        INTEGER      NOT NULL,
-    weight        INTEGER      NOT NULL,
-    dob           DATE         NOT NULL,
-    stronger_foot CHAR         NOT NULL,
-    club_id       SERIAL,
-    PRIMARY KEY (footballer_id),
     FOREIGN KEY (club_id) REFERENCES club (club_id)
 );
 
@@ -170,14 +170,14 @@ CREATE TABLE training
 -- INSERT DATA STATEMENTS --
 ----------------------------
 
-\COPY coach (coach_id, name, dob)  FROM 'coach.csv' WITH DELIMITER ',';
-\COPY club (club_id, coach_id, country, name) FROM 'club.csv' WITH DELIMITER ',';
-\COPY footballer (footballer_id, name, nationality, height, weight, dob, stronger_foot, club_id)  FROM 'footballer.csv' WITH DELIMITER ',';
-\COPY club_league (club_id, league) FROM 'club_league.csv' WITH DELIMITER ',';
-\COPY club_trophy (club_id, name, date) FROM 'club_trophy.csv' WITH DELIMITER ',';
-\COPY footballer_ability (footballer_id, last_update, offensive_awareness, ball_control, dribbling, tight_possession, low_pass, lofted_pass, finishing, heading, set_piece_taking, curl, speed, acceleration, kicking_power, jumping, physical_contact, balance, stamina, defensive_awareness, tackling, aggression, defensive_engagement, gk_awareness, gk_catching, gk_parrying, gk_reflexes, gk_reach, weak_foot_usage, weak_foot_accuracy, form, injury_resistance) FROM 'footballer_ability.csv' WITH DELIMITER ',';
-\COPY footballer_position (footballer_id, position) FROM 'footballer_position.csv' WITH DELIMITER ',';
-\COPY footballer_skill (footballer_id, skill) FROM 'footballer_skill.csv' WITH DELIMITER ',';
-\COPY enrollment (footballer_id, club_id, enrollment_start, enrollment_end, price, salary) FROM 'enrollment.csv' WITH DELIMITER ',';
-\COPY training (training_start, training_end) FROM 'training.csv' WITH DELIMITER ',';
+\COPY coach (coach_id, name, dob)  FROM 'coach.csv' CSV;
+\COPY club (club_id, coach_id, country, name) FROM 'club.csv' CSV;
+\COPY footballer (footballer_id, name, nationality, height, weight, dob, stronger_foot, club_id)  FROM 'footballer.csv' CSV;
+\COPY club_league (club_id, league) FROM 'club_league.csv' CSV;
+\COPY club_trophy (club_id, name, date) FROM 'club_trophy.csv' CSV;
+\COPY footballer_ability (footballer_id, last_update, offensive_awareness, ball_control, dribbling, tight_possession, low_pass, lofted_pass, finishing, heading, set_piece_taking, curl, speed, acceleration, kicking_power, jumping, physical_contact, balance, stamina, defensive_awareness, tackling, aggression, defensive_engagement, gk_awareness, gk_catching, gk_parrying, gk_reflexes, gk_reach, weak_foot_usage, weak_foot_accuracy, form, injury_resistance) FROM 'footballer_ability.csv' CSV;
+\COPY footballer_position (footballer_id, position) FROM 'footballer_position.csv' CSV;
+\COPY footballer_skill (footballer_id, skill) FROM 'footballer_skill.csv' CSV;
+\COPY enrollment (footballer_id, club_id, enrollment_start, enrollment_end, price, salary) FROM 'enrollment.csv' CSV;
+\COPY training (club_id, coach_id, training_start, training_end) FROM 'training.csv' CSV;
 
