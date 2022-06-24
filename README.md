@@ -1,3 +1,3 @@
 # Football Management System ⚽🏟️ 
 
-An application control data about fooballer. Use [PostgreSQL](https://www.postgresql.org/) as database.
+An application to manage fooballer's information. Use [PostgreSQL](https://www.postgresql.org/) as database.
