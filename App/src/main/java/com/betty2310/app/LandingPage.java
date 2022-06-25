@@ -5,10 +5,17 @@ import javafx.scene.control.Label;
 
 public class LandingPage {
     @FXML
-    private Label welcomeText;
-
+    private Label test = new Label();
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void FootballerActionMenu() {
+        test.setText("You click footballer button!");
+    }
+    @FXML
+    protected void ClubActionMenu() {
+        test.setText("You click club button!");
+    }
+    @FXML
+    protected void CoachActionMenu() {
+        test.setText("You click coach button!");
     }
 }
