@@ -14,7 +14,31 @@ DROP TABLE IF EXISTS training CASCADE;
 ---DOMAINS---
 -------------
 
+/*
+stronger foot domain
+ * L : left foot
+ * R : right foot
+ * A : all
+*/
+CREATE DOMAIN _STRONGER_FOOT CHAR CHECK ( VALUE IN ('L', 'R', 'A'));
 CREATE DOMAIN _ABILITY SMALLINT CHECK ( VALUE >= 40 AND VALUE <= 100);
+
+/*
+footballer's position  domain
+ * GK : goal keeper
+ * LB : left back
+ * RB : right back
+ * CB : centre back
+ * DMF : defensive midfielder
+ * CMF : centre midfielder
+ * AMF : attack midfielder
+ * RMF : right midfielder
+ * LMF : left midfielder
+ * LWF : left winger forward
+ * RWF : right winger forward
+ * SS : second striker
+ * CF : centre forward
+*/
 CREATE DOMAIN _POS VARCHAR(3) CHECK ( VALUE IN
                                       ('GK', 'LB', 'RB', 'CB', 'DMF', 'CMF', 'AMF', 'LMF', 'RMF', 'LWF', 'RWF', 'SS',
                                        'CF'));
