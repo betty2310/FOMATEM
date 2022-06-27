@@ -1,10 +1,10 @@
-package com.betty2310.app;
+package com.betty2310.app.table;
 
-public class Footballer {
+public class FootballerOverviewTable {
     private String footballer_id;
     private String name;
 
-    public Footballer(String footballer_id, String name) {
+    public FootballerOverviewTable(String footballer_id, String name) {
         this.footballer_id = footballer_id;
         this.name = name;
     }

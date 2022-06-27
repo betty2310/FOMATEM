@@ -1,6 +1,7 @@
 package com.betty2310.app;
 
 import com.betty2310.app.connection.Database;
+import com.betty2310.app.table.FootballerOverviewTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -20,11 +21,11 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class FootballerOverview implements Initializable {
-    public TableView<Footballer> table;
-    public TableColumn<Footballer, String> colName;
-    public TableColumn<Footballer, String> colID;
+    public TableView<FootballerOverviewTable> table;
+    public TableColumn<FootballerOverviewTable, String> colName;
+    public TableColumn<FootballerOverviewTable, String> colID;
 
-    private ObservableList<Footballer> data;
+    private ObservableList<FootballerOverviewTable> data;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -38,7 +39,7 @@ public class FootballerOverview implements Initializable {
             ResultSet rs = connection.createStatement().executeQuery("SELECT footballer_id, name FROM footballer LIMIT 100;");
 
             while (rs.next()) {
-                data.add(new Footballer(Integer.toString(rs.getInt("footballer_id")), rs.getString("name")));
+                data.add(new FootballerOverviewTable(Integer.toString(rs.getInt("footballer_id")), rs.getString("name")));
             }
 
             colID.setCellValueFactory(new PropertyValueFactory<>("footballer_id"));
