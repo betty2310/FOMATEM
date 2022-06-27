@@ -1,7 +1,8 @@
 module com.betty2310.app {
     requires javafx.controls;
     requires javafx.fxml;
-    requires CustomStage;
+    requires java.sql;
+    requires org.postgresql.jdbc;
 
 
     opens com.betty2310.app to javafx.fxml;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="589.0" prefWidth="911.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.FootballerOverview">
+   <children>
+      <TableView fx:id="table" layoutX="20.0" layoutY="19.0" onMouseClicked="#handleFootballer" prefHeight="353.0" prefWidth="872.0" stylesheets="@style.css">
+        <columns>
+          <TableColumn id="colID" fx:id="colID" prefWidth="447.0" style="-fx-alignment: CENTER;" text="ID" />
+          <TableColumn id="colName" fx:id="colName" minWidth="0.0" prefWidth="421.0" style="-fx-alignment: CENTER;" text="NAME" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
