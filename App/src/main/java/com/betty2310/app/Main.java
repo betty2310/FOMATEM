@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -19,6 +20,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.setTitle("FOMATEM");
         stage.initStyle(StageStyle.UNIFIED);
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("icon/ball.png"))));
         stage.show();
     }
 

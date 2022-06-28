@@ -1,8 +1,5 @@
 package com.betty2310.app.table;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-
 public class ClubOverviewTable {
 
     private String club_id ;

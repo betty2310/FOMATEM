@@ -52,6 +52,16 @@ public class LandingPage {
     }
 
     public void queryCoachAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CoachOverview.fxml"));
+            Parent window = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Coach Overview");
+            stage.setScene(new Scene(window));
+            stage.show();
+        } catch (IOException e) {
+            System.out.println("Can't load Coach Overview window.");
+        }
     }
 
     public void queryClubAction() {
