@@ -3,14 +3,11 @@ package com.betty2310.app;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +22,7 @@ public class LandingPage {
     private GridPane pnCoach;
 
     @FXML
-    private GridPane pnClub;
+    private Pane pnClub;
     @FXML
     private GridPane pnFootballer;
     @FXML
