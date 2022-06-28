@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="599.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.ClubOverview">
    <children>
-      <MFXTableView fx:id="table" layoutX="27.0" layoutY="23.0" prefHeight="435.0" prefWidth="987.0" />
+      <TableView fx:id="table" layoutX="32.0" layoutY="18.0" onMouseClicked="#handleClubDetail" prefHeight="441.0" prefWidth="985.0" stylesheets="@style.css">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="256.90857315063477" text="club_id" />
+          <TableColumn fx:id="colName" minWidth="0.0" prefWidth="461.8359680175781" text="club_name" />
+            <TableColumn fx:id="colCountry" prefWidth="261.55474853515625" text="country" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

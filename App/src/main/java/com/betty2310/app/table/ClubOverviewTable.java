@@ -2,25 +2,23 @@ package com.betty2310.app.table;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 public class ClubOverviewTable {
 
-    private final IntegerProperty club_id = new SimpleIntegerProperty();
+    private String club_id ;
     private String name ;
     private String country ;
 
-    public ClubOverviewTable(Integer id, String name, String country) {
+    public ClubOverviewTable(String id, String name, String country) {
         setClub_id(id);
         setName(name);
         setCountry(country);
     }
-    public int getClub_id() {
-        return club_id.get();
+    public String getClub_id() {
+        return club_id;
     }
-    public void setClub_id(int id) {
-        this.club_id.set(id);
+    public void setClub_id(String id) {
+        this.club_id = id;
     }
     public String getName() {
         return this.name;

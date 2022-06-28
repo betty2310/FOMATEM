@@ -8,10 +8,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -45,6 +47,7 @@ public class FootballerOverview implements Initializable {
             colID.setCellValueFactory(new PropertyValueFactory<>("footballer_id"));
             colName.setCellValueFactory(new PropertyValueFactory<>("name"));
             table.setItems(data);
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -53,9 +56,16 @@ public class FootballerOverview implements Initializable {
     public void handleFootballer(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2 && !mouseEvent.isConsumed()) {
             mouseEvent.consume();
+
+            FootballerOverviewTable rowData = table.getSelectionModel().getSelectedItem();
+            if (rowData == null) return;
+            Label text = new Label("You click on student id: " +rowData.getFootballer_id() );
+            text.setFont(new Font("Monaco", 20));
+            Pane pane = new Pane();
+            pane.getChildren().add(text);
             Stage stage = new Stage();
-            stage.setScene(new Scene(new Pane()));
-            stage.setTitle("HIHIHi");
+            stage.setScene(new Scene(pane));
+            stage.setTitle("Footballer ID " + rowData.getFootballer_id() + " Detail");
             stage.show();
         }
     }
