@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -18,6 +19,8 @@ public class LandingPage {
     public Button btClub;
     public Button btCoach;
     public Button btFootballer;
+    public GridPane pnHome;
+    public Pane titlePane;
     @FXML
     private GridPane pnCoach;
 
@@ -26,26 +29,24 @@ public class LandingPage {
     @FXML
     private GridPane pnFootballer;
     @FXML
-    private Pane pnSection;
-    @FXML
-    private Label section;
-
-    @FXML
     protected void handleClickSidebar(ActionEvent event) {
         if (event.getSource() == btFootballer) {
-            section.setText("Footballer Dashboard");
-            pnSection.setBackground(new Background(new BackgroundFill(Color.rgb(163, 190, 140), CornerRadii.EMPTY, Insets.EMPTY)));
+            btFootballer.setStyle("-fx-background-color: #ECEFF4");
+            btClub.setStyle("-fx-background-color: #D8DEE9");
+            btCoach.setStyle("-fx-background-color: #D8DEE9");
             pnFootballer.toFront();
         }
 
         if (event.getSource() == btClub) {
-            section.setText("Club Dashboard");
-            pnSection.setBackground(new Background(new BackgroundFill(Color.rgb(94, 129, 172), CornerRadii.EMPTY, Insets.EMPTY)));
+            btClub.setStyle("-fx-background-color: #ECEFF4");
+            btFootballer.setStyle("-fx-background-color: #D8DEE9");
+            btCoach.setStyle("-fx-background-color: #D8DEE9");
             pnClub.toFront();
         }
         if (event.getSource() == btCoach) {
-            section.setText("Coach Dashboard");
-            pnSection.setBackground(new Background(new BackgroundFill(Color.rgb(180, 142, 173), CornerRadii.EMPTY, Insets.EMPTY)));
+            btCoach.setStyle("-fx-background-color: #ECEFF4");
+            btClub.setStyle("-fx-background-color: #D8DEE9");
+            btFootballer.setStyle("-fx-background-color: #D8DEE9");
             pnCoach.toFront();
         }
     }
@@ -53,10 +54,20 @@ public class LandingPage {
     public void queryCoachAction(ActionEvent actionEvent) {
     }
 
-    public void queryClubAction(ActionEvent actionEvent) {
+    public void queryClubAction() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ClubOverview.fxml"));
+            Parent window = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Club Overview");
+            stage.setScene(new Scene(window));
+            stage.show();
+        } catch (IOException e) {
+            System.out.println("Can't load Club Overview window.");
+        }
     }
 
-    public void queryFootballerAction()  {
+    public void queryFootballerAction() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FootballerOverview.fxml"));
             Parent window = fxmlLoader.load();
@@ -68,5 +79,14 @@ public class LandingPage {
             System.out.println("Can't load Footballer Overview window.");
         }
 
+    }
+
+    public void returnHome(MouseEvent mouseEvent) {
+        if (mouseEvent.getClickCount() == 2 && !mouseEvent.isConsumed()) {
+            btCoach.setStyle("-fx-background-color: #D8DEE9");
+            btClub.setStyle("-fx-background-color: #D8DEE9");
+            btFootballer.setStyle("-fx-background-color: #D8DEE9");
+            pnHome.toFront();
+        }
     }
 }

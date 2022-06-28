@@ -3,6 +3,7 @@ module com.betty2310.app {
     requires javafx.fxml;
     requires java.sql;
     requires org.postgresql.jdbc;
+    requires MaterialFX;
 
 
     opens com.betty2310.app to javafx.fxml;

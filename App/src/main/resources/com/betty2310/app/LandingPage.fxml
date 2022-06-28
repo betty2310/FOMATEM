@@ -1,84 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="361.0" prefWidth="587.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.LandingPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="662.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.LandingPage">
    <children>
-      <VBox prefHeight="361.0" prefWidth="160.0" style="-fx-background-color: #2E3440#2E3440;">
+      <VBox layoutY="-1.0" prefHeight="472.0" prefWidth="190.0" style="-fx-background-color: #D8DEE9#D8DEE9;">
          <children>
-            <Pane prefHeight="115.0" prefWidth="164.0">
+            <Pane onMouseClicked="#returnHome" prefHeight="170.0" prefWidth="160.0">
                <children>
-                  <Label alignment="TOP_RIGHT" graphicTextGap="10.0" layoutX="-12.0" layoutY="43.0" prefHeight="28.0" prefWidth="147.0" text="FOMATEM" textFill="#eceff4" underline="true">
+                  <ImageView fitHeight="61.0" fitWidth="60.0" layoutX="65.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/ball.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="-2.0" layoutY="85.0" prefHeight="28.0" prefWidth="147.0" text="FOMATEM" textFill="#2e3440" underline="true">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="SF Pro Rounded Black" size="18.0" />
                      </font>
-                     <graphic>
-                        <FontAwesomeIconView fill="#eceff4" glyphName="CIRCLE" />
-                     </graphic>
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="btFootballer" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="81.0" prefWidth="174.0" stylesheets="@style.css" text="Footballer" textFill="#eceff4">
+            <Button fx:id="btFootballer" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="82.0" prefWidth="190.0" stylesheets="@style.css" text="Footballer" textFill="#15171c">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <FontAwesomeIconView fill="#eceff4" glyphName="STAR">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </FontAwesomeIconView>
-               </graphic>
                <padding>
                   <Insets left="30.0" />
                </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/soccer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="SF Pro Rounded Regular" size="14.0" />
+               </font>
             </Button>
-            <Button fx:id="btClub" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="87.0" prefWidth="161.0" stylesheets="@style.css" text="Club" textFill="#eceff4">
+            <Button fx:id="btClub" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="87.0" prefWidth="192.0" stylesheets="@style.css" text="Club" textFill="#15171c">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <FontAwesomeIconView fill="#eceff4" glyphName="GROUP" text="">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </FontAwesomeIconView>
-               </graphic>
                <padding>
                   <Insets left="30.0" />
                </padding>
+               <font>
+                  <Font name="SF Pro Rounded Regular" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/team.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="btCoach" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="87.0" prefWidth="161.0" stylesheets="@style.css" text="Coach" textFill="#eceff4">
+            <Button fx:id="btCoach" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="80.0" prefWidth="193.0" stylesheets="@style.css" text="Coach" textFill="#15171c">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <FontAwesomeIconView fill="#eceff4" glyphName="USER">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </FontAwesomeIconView>
-               </graphic>
                <padding>
                   <Insets left="30.0" />
                </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/coach.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="SF Compact Rounded Regular" size="14.0" />
+               </font>
             </Button>
          </children>
       </VBox>
-      <StackPane layoutX="167.0" layoutY="144.0" prefHeight="203.0" prefWidth="406.0">
+      <StackPane layoutX="206.0" layoutY="169.0" prefHeight="291.0" prefWidth="442.0" style="-fx-background-color: #ECEFF4#ECEFF4; -fx-border-radius: 30;">
          <children>
             <GridPane fx:id="pnFootballer" prefHeight="218.0" prefWidth="398.0" style="-fx-background-color: #ECEFF4#ECEFF4;">
               <columnConstraints>
@@ -92,7 +105,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#queryFootballerAction" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #A3BE8C#A3BE8C;" text="query" textFill="#eceff4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#queryFootballerAction" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #505050#505050;" text="query" textFill="#eceff4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
                <StackPane.margin>
                   <Insets />
@@ -113,7 +126,7 @@
                   <Insets />
                </StackPane.margin>
                <children>
-                  <Button mnemonicParsing="false" onAction="#queryClubAction" prefHeight="30.0" prefWidth="137.0" style="-fx-background-color: #5E81AC#5E81AC;" text="query" textFill="#eceff4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#queryClubAction" prefHeight="30.0" prefWidth="137.0" style="-fx-background-color: #505050#505050;" text="query" textFill="#eceff4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
                <padding>
                   <Insets left="10.0" />
@@ -131,13 +144,13 @@
                   <RowConstraints maxHeight="93.565185546875" minHeight="10.0" prefHeight="71.3404541015625" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#queryCoachAction" prefHeight="30.0" prefWidth="215.0" style="-fx-background-color: #B48EAD#B48EAD;" text="query" textFill="#eceff4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#queryCoachAction" prefHeight="30.0" prefWidth="215.0" style="-fx-background-color: #505050#505050;" text="query" textFill="#eceff4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
                <StackPane.margin>
                   <Insets />
                </StackPane.margin>
             </GridPane>
-            <GridPane fx:id="pnHome" prefHeight="234.0" prefWidth="412.0" style="-fx-background-color: #ECEFF4#ECEFF4;">
+            <GridPane fx:id="pnHome" prefHeight="234.0" prefWidth="412.0" style="-fx-background-color: #ECEFF4#ECEFF4; -fx-border-radius: 30;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -155,24 +168,66 @@
             </GridPane>
          </children>
       </StackPane>
-      <Pane layoutX="167.0" layoutY="14.0" prefHeight="28.0" prefWidth="406.0">
+      <HBox layoutX="212.0" layoutY="122.0" prefHeight="24.0" prefWidth="427.0">
          <children>
-            <Label fx:id="title" layoutX="7.0" layoutY="5.0" prefHeight="18.0" prefWidth="270.0" text="Footballer Mangement Sytem" textFill="#2e3440">
-               <font>
-                  <Font name="SF Compact Rounded Medium" size="15.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="pnSection" layoutX="160.0" layoutY="51.0" prefHeight="61.0" prefWidth="427.0" style="-fx-background-color: #4C566A#4C566A;">
-         <children>
-            <Label fx:id="section" layoutX="8.0" layoutY="10.0" prefHeight="42.0" prefWidth="398.0" text="HOME" textFill="#eceff4">
-               <font>
-                  <Font name="System Bold" size="28.0" />
-               </font>
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
+            <Label prefHeight="18.0" prefWidth="124.0" text="Total Footballers" textFill="#15171c">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
             </Label>
+            <Label prefHeight="18.0" prefWidth="110.0" text="Total Coachs" textFill="#15171c">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="94.0" text="Total Clubs" textFill="#15171c">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="76.0" text="and more ..." textFill="#15171c">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="211.0" layoutY="62.0" prefHeight="60.0" prefWidth="427.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="121.0" text="112000" textFill="#a3be8c">
+               <font>
+                  <Font name="SF Mono Medium" size="31.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="119.0" text="4000" textFill="#ebcb8b">
+               <font>
+                  <Font name="SF Mono Medium" size="31.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="106.0" text="5000" textFill="#5e81ac">
+               <font>
+                  <Font name="SF Mono Medium" size="31.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="76.0" text="&gt;" textFill="#d08770">
+               <font>
+                  <Font name="SF Mono Medium" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Pane fx:id="titlePane" layoutX="204.0" layoutY="16.0" prefHeight="31.0" prefWidth="445.0" style="-fx-background-color: #ECEFF4#ECEFF4;">
+         <children>
+            <Label fx:id="title" contentDisplay="CENTER" layoutX="56.0" layoutY="-3.0" prefHeight="37.0" prefWidth="359.0" text="Welcome to Fomatem - Footballer management sytem " textAlignment="CENTER" textFill="#15171c" textOverrun="CLIP">
+               <font>
+                  <Font name="SF Pro Rounded Medium" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="37.0" fitWidth="24.0" layoutX="21.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/hand.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

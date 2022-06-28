@@ -1,11 +1,11 @@
 .button {
-    -fx-background-color: #2E3440;
+    -fx-background-color: #D8DEE9;
 }
 .button:hover {
-    -fx-background-color: #434C5E;
+    -fx-background-color: #E5E9F0;
 }
 .button:pressed {
-    -fx-background-color: #2E3440;
+    -fx-background-color: #ECEFF4;
 }
 
 .table-view .column-header,

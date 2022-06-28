@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="599.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.ClubOverview">
+   <children>
+      <MFXTableView fx:id="table" layoutX="27.0" layoutY="23.0" prefHeight="435.0" prefWidth="987.0" />
+   </children>
+</AnchorPane>
