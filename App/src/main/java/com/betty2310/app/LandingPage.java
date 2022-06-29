@@ -1,5 +1,6 @@
 package com.betty2310.app;
 
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,16 @@ public class LandingPage {
     public Button btFootballer;
     public Pane pnHome;
     public Pane titlePane;
+    public MFXTextField tfClubName;
+    public MFXTextField tfClubCountry;
+    public static String clubName;
+    public static String countryName;
+    void setClubName(String name) {
+        clubName = name;
+    }
+    void setCountryName(String name) {
+        countryName = name;
+    }
     @FXML
     private GridPane pnCoach;
 
@@ -63,6 +74,8 @@ public class LandingPage {
 
     public void queryClubAction() {
         try {
+            setClubName(tfClubName.getText());
+            setCountryName(tfClubCountry.getText());
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ClubOverview.fxml"));
             Parent window = fxmlLoader.load();
             Stage stage = new Stage();

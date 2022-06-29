@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -15,6 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="772.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.LandingPage">
@@ -134,7 +136,22 @@
                   <Insets />
                </StackPane.margin>
                <children>
-                  <MFXButton layoutX="327.0" layoutY="218.0" onAction="#queryClubAction" text="query" />
+                  <MFXButton layoutX="427.0" layoutY="229.0" onAction="#queryClubAction" prefHeight="37.0" prefWidth="98.0" stylesheets="@style.css" text="query" />
+                  <MFXTextField fx:id="tfClubName" floatingText="Club Name" layoutX="21.0" layoutY="66.0" prefHeight="60.0" prefWidth="225.0" promptText="Enter club name">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </MFXTextField>
+                  <Label layoutX="21.0" layoutY="22.0" text="Basic fitler" textFill="#2e3440">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <MFXTextField fx:id="tfClubCountry" floatingText="Club Region" layoutX="21.0" layoutY="155.0" prefHeight="60.0" prefWidth="225.0" promptText="Enter club region">
+                     <textFill>
+                        <Color red="0.18039216101169586" green="0.20392157137393951" blue="0.250980406999588" opacity="0.8700000047683716" />
+                     </textFill>
+                  </MFXTextField>
                </children>
             </Pane>
             <Pane fx:id="pnHome" style="-fx-background-color: #ECEFF4#ECEFF4;" />

@@ -1,4 +1,4 @@
-package com.betty2310.app.table;
+package com.betty2310.app.model;
 
 public class CoachOverviewTable {
     private Integer coach_id;

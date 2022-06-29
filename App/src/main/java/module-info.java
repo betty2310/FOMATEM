@@ -8,6 +8,6 @@ module com.betty2310.app {
 
     opens com.betty2310.app to javafx.fxml;
     exports com.betty2310.app;
-    exports com.betty2310.app.table;
-    opens com.betty2310.app.table to javafx.fxml;
+    exports com.betty2310.app.model;
+    opens com.betty2310.app.model to javafx.fxml;
 }

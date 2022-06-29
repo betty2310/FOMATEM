@@ -1,14 +1,13 @@
 package com.betty2310.app;
 
 import com.betty2310.app.connection.Database;
-import com.betty2310.app.table.FootballerOverviewTable;
+import com.betty2310.app.model.FootballerOverviewTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;

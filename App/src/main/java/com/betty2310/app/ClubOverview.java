@@ -1,8 +1,7 @@
 package com.betty2310.app;
 
 import com.betty2310.app.connection.Database;
-import com.betty2310.app.table.ClubOverviewTable;
-import com.betty2310.app.table.FootballerOverviewTable;
+import com.betty2310.app.model.ClubOverviewTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -41,6 +40,7 @@ public class ClubOverview implements Initializable {
 
     private ObservableList<ClubOverviewTable> data;
 
+
     @FXML
     void handleClubDetail(MouseEvent event) {
         if (event.getClickCount() == 2 && !event.isConsumed()) {
@@ -48,7 +48,7 @@ public class ClubOverview implements Initializable {
 
             ClubOverviewTable rowData = table.getSelectionModel().getSelectedItem();
             if (rowData == null) return;
-            Label text = new Label("You click on student id: " +rowData.getClub_id() );
+            Label text = new Label("You click on student id: " + rowData.getClub_id());
             text.setFont(new Font("Monaco", 20));
             Pane pane = new Pane();
             pane.getChildren().add(text);
@@ -60,6 +60,13 @@ public class ClubOverview implements Initializable {
 
     }
 
+    public String handleQuery() {
+        String query = "(select * from club_overview where club_name LIKE '%" +LandingPage.clubName +  "%')" +
+                " intersect " +
+                "(select * from club_overview where club_country LIKE '%"+ LandingPage.countryName +  "%');";
+        return query;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         data = FXCollections.observableArrayList();
@@ -69,7 +76,7 @@ public class ClubOverview implements Initializable {
 
             table.setPlaceholder(new Label("No rows to display"));
 
-            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM club_overview LIMIT 1000;");
+            ResultSet rs = connection.createStatement().executeQuery(handleQuery());
 
             while (rs.next()) {
                 data.add(new ClubOverviewTable(Integer.toString(rs.getInt("club_id")), rs.getString("club_name"), rs.getString("club_country"), rs.getString("coach_name"), Integer.toString(rs.getInt("number_of_footballer")), Integer.toString(rs.getInt("number_of_trophy"))));

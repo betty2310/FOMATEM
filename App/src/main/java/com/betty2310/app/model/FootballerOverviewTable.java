@@ -1,4 +1,4 @@
-package com.betty2310.app.table;
+package com.betty2310.app.model;
 
 public class FootballerOverviewTable {
     private String footballer_id;
