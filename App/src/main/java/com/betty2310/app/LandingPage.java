@@ -1,15 +1,12 @@
 package com.betty2310.app;
 
-import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -18,94 +15,37 @@ public class LandingPage {
     public Button btCoach;
     public Button btFootballer;
     public Pane pnHome;
-    public Pane titlePane;
-    public MFXTextField tfClubName;
-    public MFXTextField tfClubCountry;
-    public static String clubName;
-    public static String countryName;
-    void setClubName(String name) {
-        clubName = name;
-    }
-    void setCountryName(String name) {
-        countryName = name;
-    }
     @FXML
-    private GridPane pnCoach;
-
+    private Pane pnCoach;
     @FXML
     private Pane pnClub;
     @FXML
-    private GridPane pnFootballer;
+    private Pane pnFootballer;
     @FXML
-    protected void handleClickSidebar(ActionEvent event) {
+    protected void handleClickSidebar(ActionEvent event) throws IOException {
         if (event.getSource() == btFootballer) {
-            btFootballer.setStyle("-fx-background-color: #ECEFF4");
-            btClub.setStyle("-fx-background-color: #D8DEE9");
-            btCoach.setStyle("-fx-background-color: #D8DEE9");
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FootballerPane.fxml"));
+            Node node = fxmlLoader.load();
+            pnFootballer.getChildren().add(node);
             pnFootballer.toFront();
         }
 
         if (event.getSource() == btClub) {
-            btClub.setStyle("-fx-background-color: #ECEFF4");
-            btFootballer.setStyle("-fx-background-color: #D8DEE9");
-            btCoach.setStyle("-fx-background-color: #D8DEE9");
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ClubPane.fxml"));
+            Node node = fxmlLoader.load();
+            pnClub.getChildren().add(node);
             pnClub.toFront();
         }
         if (event.getSource() == btCoach) {
-            btCoach.setStyle("-fx-background-color: #ECEFF4");
-            btClub.setStyle("-fx-background-color: #D8DEE9");
-            btFootballer.setStyle("-fx-background-color: #D8DEE9");
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CoachPane.fxml"));
+            Node node = fxmlLoader.load();
+            pnCoach.getChildren().add(node);
             pnCoach.toFront();
         }
     }
 
-    public void queryCoachAction(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CoachOverview.fxml"));
-            Parent window = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Coach Overview");
-            stage.setScene(new Scene(window));
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Can't load Coach Overview window.");
-        }
-    }
-
-    public void queryClubAction() {
-        try {
-            setClubName(tfClubName.getText());
-            setCountryName(tfClubCountry.getText());
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ClubOverview.fxml"));
-            Parent window = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Club Overview");
-            stage.setScene(new Scene(window));
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Can't load Club Overview window.");
-        }
-    }
-
-    public void queryFootballerAction() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FootballerOverview.fxml"));
-            Parent window = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Footballer Overview");
-            stage.setScene(new Scene(window));
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Can't load Footballer Overview window.");
-        }
-
-    }
-
-    public void returnHome(MouseEvent mouseEvent) {
+    public void returnHome(MouseEvent mouseEvent)  {
         if (mouseEvent.getClickCount() == 2 && !mouseEvent.isConsumed()) {
-            btCoach.setStyle("-fx-background-color: #D8DEE9");
-            btClub.setStyle("-fx-background-color: #D8DEE9");
-            btFootballer.setStyle("-fx-background-color: #D8DEE9");
             pnHome.toFront();
         }
     }

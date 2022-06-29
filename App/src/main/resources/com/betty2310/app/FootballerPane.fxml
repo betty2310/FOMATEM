@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.FootballerPane">
+   <children>
+      <MFXButton layoutX="385.0" layoutY="197.0" onAction="#queryClubAction" prefHeight="37.0" prefWidth="98.0" stylesheets="@style.css" text="query" />
+   </children>
+</Pane>

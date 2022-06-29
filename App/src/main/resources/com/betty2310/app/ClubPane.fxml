@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnClub" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.ClubPane">
+   <children>
+      <MFXButton layoutX="385.0" layoutY="197.0" onAction="#queryClubAction" prefHeight="37.0" prefWidth="98.0" stylesheets="@style.css" text="query" />
+      <MFXTextField fx:id="tfClubName" floatMode="BORDER" floatingText="Club Name" layoutX="21.0" layoutY="66.0" prefHeight="60.0" prefWidth="225.0" promptText="Enter club name">
+         <font>
+            <Font name="SF Pro Display Regular" size="13.0" />
+         </font>
+      </MFXTextField>
+      <Label layoutX="21.0" layoutY="22.0" text="Basic fitler" textFill="#2e3440">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <MFXTextField fx:id="tfClubCountry" floatMode="BORDER" floatingText="Club Region" layoutX="21.0" layoutY="155.0" prefHeight="60.0" prefWidth="225.0" promptText="Enter club region">
+         <textFill>
+            <Color red="0.18039216101169586" green="0.20392157137393951" blue="0.250980406999588" opacity="0.8700000047683716" />
+         </textFill>
+      </MFXTextField>
+   </children>
+</Pane>

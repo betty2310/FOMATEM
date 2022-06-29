@@ -7,6 +7,9 @@
 .button:pressed {
     -fx-background-color: #ECEFF4;
 }
+.button:focused {
+    -fx-background-color: #ECEFF4;
+}
 
 .table-view .column-header,
 .table-view .column-header-background .filler {

@@ -61,9 +61,9 @@ public class ClubOverview implements Initializable {
     }
 
     public String handleQuery() {
-        String query = "(select * from club_overview where club_name LIKE '%" +LandingPage.clubName +  "%')" +
+        String query = "(select * from club_overview where club_name LIKE '%" +ClubPane.clubName +  "%')" +
                 " intersect " +
-                "(select * from club_overview where club_country LIKE '%"+ LandingPage.countryName +  "%');";
+                "(select * from club_overview where club_country LIKE '%"+ ClubPane.countryName +  "%');";
         return query;
     }
 
