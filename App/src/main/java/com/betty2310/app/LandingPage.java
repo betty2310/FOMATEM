@@ -16,7 +16,7 @@ public class LandingPage {
     public Button btClub;
     public Button btCoach;
     public Button btFootballer;
-    public GridPane pnHome;
+    public Pane pnHome;
     public Pane titlePane;
     @FXML
     private GridPane pnCoach;

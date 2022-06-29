@@ -17,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -33,6 +34,10 @@ public class ClubOverview implements Initializable {
 
     @FXML
     private TableColumn<ClubOverviewTable, String> colName;
+
+    public TableColumn<ClubOverviewTable, String> colCoachName;
+    public TableColumn<ClubOverviewTable, String> colNumberOfFootballer;
+    public TableColumn<ClubOverviewTable, Spring> colNumberOfTrophy;
 
     private ObservableList<ClubOverviewTable> data;
 
@@ -64,15 +69,18 @@ public class ClubOverview implements Initializable {
 
             table.setPlaceholder(new Label("No rows to display"));
 
-            ResultSet rs = connection.createStatement().executeQuery("SELECT club_id, name,country FROM club LIMIT 100;");
+            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM club_overview LIMIT 1000;");
 
             while (rs.next()) {
-                data.add(new ClubOverviewTable(Integer.toString(rs.getInt("club_id")), rs.getString("name"), rs.getString("country")));
+                data.add(new ClubOverviewTable(Integer.toString(rs.getInt("club_id")), rs.getString("club_name"), rs.getString("club_country"), rs.getString("coach_name"), Integer.toString(rs.getInt("number_of_footballer")), Integer.toString(rs.getInt("number_of_trophy"))));
             }
 
             colID.setCellValueFactory(new PropertyValueFactory<>("club_id"));
-            colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-            colCountry.setCellValueFactory(new PropertyValueFactory<>("country"));
+            colName.setCellValueFactory(new PropertyValueFactory<>("clubName"));
+            colCountry.setCellValueFactory(new PropertyValueFactory<>("clubCountry"));
+            colCoachName.setCellValueFactory(new PropertyValueFactory<>("coachName"));
+            colNumberOfFootballer.setCellValueFactory(new PropertyValueFactory<>("nFootballer"));
+            colNumberOfTrophy.setCellValueFactory(new PropertyValueFactory<>("nTrophy"));
             table.setItems(data);
 
         } catch (SQLException e) {

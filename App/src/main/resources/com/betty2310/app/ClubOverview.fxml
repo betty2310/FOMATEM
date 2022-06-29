@@ -8,9 +8,12 @@
    <children>
       <TableView fx:id="table" layoutX="32.0" layoutY="18.0" onMouseClicked="#handleClubDetail" prefHeight="441.0" prefWidth="985.0" stylesheets="@style.css">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="256.90857315063477" text="club_id" />
-          <TableColumn fx:id="colName" minWidth="0.0" prefWidth="461.8359680175781" text="club_name" />
-            <TableColumn fx:id="colCountry" prefWidth="261.55474853515625" text="country" />
+          <TableColumn fx:id="colID" prefWidth="76.60901641845703" text="club_id" />
+          <TableColumn fx:id="colName" minWidth="0.0" prefWidth="252.3909912109375" text="club_name" />
+            <TableColumn fx:id="colCountry" prefWidth="159.1802978515625" text="club_country" />
+            <TableColumn fx:id="colCoachName" prefWidth="228.8197021484375" text="coach_name" />
+            <TableColumn fx:id="colNumberOfFootballer" prefWidth="141.62860107421875" text="number_of_footballer" />
+            <TableColumn fx:id="colNumberOfTrophy" minWidth="0.0" prefWidth="126.35980224609375" text="number_of_trophy" />
         </columns>
       </TableView>
    </children>
