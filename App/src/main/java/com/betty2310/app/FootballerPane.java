@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class FootballerPane {
-    public void queryClubAction(ActionEvent event) {
+    public void queryFootballerAction(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FootballerOverview.fxml"));
             Parent window = fxmlLoader.load();
