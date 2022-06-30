@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="772.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.LandingPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="819.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.LandingPage">
    <children>
-      <VBox layoutY="-1.0" prefHeight="472.0" prefWidth="190.0" style="-fx-background-color: #D8DEE9#D8DEE9;">
+      <VBox layoutY="-1.0" prefHeight="535.0" prefWidth="190.0" style="-fx-background-color: #D8DEE9#D8DEE9;">
          <children>
             <Pane onMouseClicked="#returnHome" prefHeight="170.0" prefWidth="160.0">
                <children>
@@ -31,6 +31,24 @@
                   </Label>
                </children>
             </Pane>
+            <Button fx:id="btHome" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="82.0" prefWidth="190.0" stylesheets="@style.css" text="Home" textFill="#15171c">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="SF Pro Rounded Regular" size="14.0" />
+               </font>
+            </Button>
             <Button fx:id="btFootballer" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleClickSidebar" prefHeight="82.0" prefWidth="190.0" stylesheets="@style.css" text="Footballer" textFill="#15171c">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -87,9 +105,9 @@
             </Button>
          </children>
       </VBox>
-      <StackPane layoutX="206.0" layoutY="169.0" prefHeight="291.0" prefWidth="541.0" style="-fx-background-color: #E5E9F0#E5E9F0; -fx-background-radius: 1em;" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="22.0">
+      <StackPane layoutX="206.0" layoutY="169.0" prefHeight="358.0" prefWidth="606.0" style="-fx-background-color: #E5E9F0#E5E9F0; -fx-background-radius: 1em;" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <Pane fx:id="pnFootballer" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pnFootballer" prefHeight="324.0" prefWidth="594.0" />
             <Pane fx:id="pnClub" style="-fx-background-color: #ECEFF4#ECEFF4;">
                <StackPane.margin>
                   <Insets />
@@ -99,7 +117,7 @@
             <Pane fx:id="pnHome" style="-fx-background-color: #ECEFF4#ECEFF4;" />
          </children>
       </StackPane>
-      <HBox layoutX="203.0" layoutY="62.0" prefHeight="80.0" prefWidth="547.0" spacing="20.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="22.0">
+      <HBox layoutX="203.0" layoutY="62.0" prefHeight="80.0" prefWidth="564.0" spacing="30.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="52.0">
          <children>
             <Pane style="-fx-background-color: #a3be8c#a3be8c; -fx-background-radius: 1em;">
                <children>
@@ -121,7 +139,7 @@
                   <Label alignment="CENTER" layoutX="25.0" layoutY="51.0" prefHeight="18.0" prefWidth="113.0" text="Total Clubs" textFill="#eceff4" />
                </children>
             </Pane>
-            <Pane style="-fx-background-color: #5E81AC#5E81AC; -fx-background-radius: 1em;">
+            <Pane prefHeight="80.0" prefWidth="167.0" style="-fx-background-color: #5E81AC#5E81AC; -fx-background-radius: 1em;">
                <children>
                   <Label alignment="CENTER" prefHeight="60.0" prefWidth="163.0" text="5000" textFill="#eceff4">
                      <font>

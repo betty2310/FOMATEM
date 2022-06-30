@@ -15,6 +15,7 @@ public class LandingPage {
     public Button btCoach;
     public Button btFootballer;
     public Pane pnHome;
+    public Button btHome;
     @FXML
     private Pane pnCoach;
     @FXML
@@ -41,6 +42,9 @@ public class LandingPage {
             Node node = fxmlLoader.load();
             pnCoach.getChildren().add(node);
             pnCoach.toFront();
+        }
+        if (event.getSource() == btHome) {
+            pnHome.toFront();
         }
     }
 
