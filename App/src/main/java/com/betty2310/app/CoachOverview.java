@@ -16,6 +16,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,7 +27,12 @@ public class CoachOverview implements Initializable {
     public TableColumn<CoachOverviewTable, Integer> colID;
     public TableColumn<CoachOverviewTable, String> colName;
 
+    public TableColumn<CoachOverviewTable, String> colClub;
+    public TableColumn<CoachOverviewTable, String> colTrophy;
+
     public ObservableList<CoachOverviewTable> data;
+    public Label countRow;
+
     public void handleCoachDetail(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2 && !mouseEvent.isConsumed()) {
             mouseEvent.consume();
@@ -44,6 +50,14 @@ public class CoachOverview implements Initializable {
         }
     }
 
+    public String handleQuery() {
+        String query =  "SELECT * FROM coach_overview"
+                + " WHERE coachname LIKE '%" + CoachPane.coachName + "%'"
+                + " AND club LIKE '%" + CoachPane.coachClub + "%'"
+                + ";";
+        return query;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         data = FXCollections.observableArrayList();
@@ -53,15 +67,18 @@ public class CoachOverview implements Initializable {
 
             table.setPlaceholder(new Label("No rows to display"));
 
-            ResultSet rs = connection.createStatement().executeQuery("SELECT coach_id, name FROM coach LIMIT 100;");
+            ResultSet rs = connection.createStatement().executeQuery(handleQuery());
 
             while (rs.next()) {
-                data.add(new CoachOverviewTable(rs.getInt("coach_id"), rs.getString("name")));
+                data.add(new CoachOverviewTable(rs.getInt("coach_id"), rs.getString("coachname"), rs.getString("club"), rs.getInt("totaltrophy")));
             }
 
             colID.setCellValueFactory(new PropertyValueFactory<>("coach_id"));
-            colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+            colName.setCellValueFactory(new PropertyValueFactory<>("coachname"));
+            colClub.setCellValueFactory(new PropertyValueFactory<>("club"));
+            colTrophy.setCellValueFactory(new PropertyValueFactory<>("totaltrophy"));
             table.setItems(data);
+            countRow.setText(String.valueOf(table.getItems().size()));
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

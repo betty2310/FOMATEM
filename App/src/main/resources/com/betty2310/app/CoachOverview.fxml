@@ -4,13 +4,33 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="599.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.CoachOverview">
    <children>
       <TableView fx:id="table" layoutX="32.0" layoutY="18.0" onMouseClicked="#handleCoachDetail" prefHeight="441.0" prefWidth="985.0" stylesheets="@style.css">
           <columns>
-          <TableColumn id="colID" fx:id="colID" prefWidth="447.0" style="-fx-alignment: CENTER;" text="ID" />
-          <TableColumn id="colName" fx:id="colName" minWidth="0.0" prefWidth="421.0" style="-fx-alignment: CENTER;" text="NAME" />
+          <TableColumn id="colID" fx:id="colID" prefWidth="97.39294815063477" style="-fx-alignment: CENTER;" text="ID" />
+          <TableColumn id="colName" fx:id="colName" minWidth="0.0" prefWidth="398.3866729736328" style="-fx-alignment: CENTER;" text="coach_name" />
+            <TableColumn id="colName" fx:id="colClub" minWidth="0.0" prefWidth="316.61334228515625" style="-fx-alignment: CENTER;" text="club" />
+            <TableColumn id="colName" fx:id="colTrophy" minWidth="0.0" prefWidth="133.75830078125" style="-fx-alignment: CENTER;" text="number_of_trophy" />
           </columns>
       </TableView>
+
+       <HBox layoutX="32.0" layoutY="470.0" prefHeight="31.0" prefWidth="168.0">
+           <children>
+               <Label prefHeight="22.0" prefWidth="54.0" text="Count:">
+                   <font>
+                       <Font size="17.0" />
+                   </font>
+               </Label>
+               <Label fx:id="countRow" prefHeight="22.0" prefWidth="42.0" text="0">
+                   <font>
+                       <Font size="17.0" />
+                   </font>
+               </Label>
+           </children>
+       </HBox>
    </children>
 </AnchorPane>
