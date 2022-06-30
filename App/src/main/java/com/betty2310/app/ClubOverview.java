@@ -21,10 +21,12 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ClubOverview implements Initializable {
     public TableView<ClubOverviewTable> table;
+    public Label countRow;
     @FXML
     private TableColumn<ClubOverviewTable, String> colCountry;
 
@@ -61,9 +63,23 @@ public class ClubOverview implements Initializable {
     }
 
     public String handleQuery() {
-        String query = "(select * from club_overview where club_name LIKE '%" +ClubPane.clubName +  "%')" +
+        String query = "(select * from club_overview where club_name LIKE '%" + ClubPane.clubName + "%')" +
                 " intersect " +
-                "(select * from club_overview where club_country LIKE '%"+ ClubPane.countryName +  "%');";
+                "(select * from club_overview where club_country LIKE '%" + ClubPane.countryName + "%')" +
+                " intersect " +
+                "(select * from club_overview where coach_name LIKE '%" + ClubPane.coachName + "%')";
+        if (!(ClubPane.leagueName == null || ClubPane.leagueName.isEmpty())) {
+            query += " intersect " +
+                    "(select * from club_overview where club_id in (select club_id from club_league where league = '" + ClubPane.leagueName + "'))";
+        }
+        if (ClubPane.trophyName == null || ClubPane.trophyName.isEmpty()) {
+            query += ";";
+        }
+        else {
+            query +=" intersect " +
+                    "(select * from club_overview where club_id in (select club_id from club_trophy where name = '" + ClubPane.trophyName + "'));";
+
+        }
         return query;
     }
 
@@ -89,6 +105,7 @@ public class ClubOverview implements Initializable {
             colNumberOfFootballer.setCellValueFactory(new PropertyValueFactory<>("nFootballer"));
             colNumberOfTrophy.setCellValueFactory(new PropertyValueFactory<>("nTrophy"));
             table.setItems(data);
+            countRow.setText(String.valueOf(table.getItems().size()));
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

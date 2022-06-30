@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
-<Pane fx:id="pnClub" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.ClubPane">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="606.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.ClubPane">
    <children>
-      <MFXButton layoutX="385.0" layoutY="197.0" onAction="#queryClubAction" prefHeight="37.0" prefWidth="98.0" stylesheets="@style.css" text="query" />
-      <MFXTextField fx:id="tfClubName" floatMode="BORDER" floatingText="Club Name" layoutX="21.0" layoutY="66.0" prefHeight="60.0" prefWidth="225.0" promptText="Enter club name">
-         <font>
-            <Font name="SF Pro Display Regular" size="13.0" />
-         </font>
-      </MFXTextField>
-      <Label layoutX="21.0" layoutY="22.0" text="Basic fitler" textFill="#2e3440">
-         <font>
-            <Font name="System Bold" size="23.0" />
-         </font>
-      </Label>
-      <MFXTextField fx:id="tfClubCountry" floatMode="BORDER" floatingText="Club Region" layoutX="21.0" layoutY="155.0" prefHeight="60.0" prefWidth="225.0" promptText="Enter club region">
-         <textFill>
-            <Color red="0.18039216101169586" green="0.20392157137393951" blue="0.250980406999588" opacity="0.8700000047683716" />
-         </textFill>
-      </MFXTextField>
+      <MFXButton layoutX="519.0" layoutY="305.0" onAction="#queryClubAction" prefHeight="39.0" prefWidth="73.0" text="query" />
+      <VBox layoutX="21.0" prefHeight="358.0" prefWidth="193.0" spacing="20.0">
+         <children>
+            <Pane prefHeight="38.0" prefWidth="193.0" />
+            <MFXTextField fx:id="tfClubName" floatingText="Club name" prefHeight="49.0" prefWidth="193.0" />
+            <MFXTextField fx:id="tfClubCountry" floatingText="Club region" prefHeight="51.0" prefWidth="195.0" />
+            <MFXTextField fx:id="tfClubCoach" floatingText="Club coach" prefHeight="51.0" prefWidth="195.0" />
+         </children>
+      </VBox>
+      <MFXComboBox fx:id="listLeague" floatingText="Select league" layoutX="249.0" layoutY="58.0" prefHeight="41.0" prefWidth="149.0" />
+      <HBox layoutY="14.0" prefHeight="31.0" prefWidth="588.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="205.0" text="Basic fitler">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" prefHeight="31.0" prefWidth="235.0" text="League" />
+            <Label prefHeight="31.0" prefWidth="133.0" text="Trophy">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <MFXComboBox fx:id="listTrophy" floatingText="Select trophy" layoutX="445.0" layoutY="58.0" prefHeight="41.0" prefWidth="149.0" />
    </children>
 </Pane>
