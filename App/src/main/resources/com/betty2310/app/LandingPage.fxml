@@ -113,7 +113,7 @@
                   <Insets />
                </StackPane.margin>
             </Pane>
-            <Pane fx:id="pnCoach" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pnCoach" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ECEFF4#ECEFF4;" />
             <Pane fx:id="pnHome" style="-fx-background-color: #ECEFF4#ECEFF4;" />
          </children>
       </StackPane>
