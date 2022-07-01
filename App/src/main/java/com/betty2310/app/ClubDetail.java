@@ -23,31 +23,42 @@ public class ClubDetail implements Initializable {
         String clubName = null;
         String query = "select name from club where club_id = " + id + ";";
         ResultSet rs = db.createStatement().executeQuery(query);
-        while(rs.next())
-        {
+        while (rs.next()) {
             clubName = rs.getString("name");
         }
         return clubName;
     }
-    public String getClubCountry(String id) throws SQLException {
-        String clubCountry = null;
-        String query = "select country from club where club_id = " + id + ";";
+
+    public String getClubLeague(String id) throws SQLException {
+        StringBuilder clubLeague = new StringBuilder();
+        String query = "select league from club_league where club_id = " + id + ";";
         ResultSet rs = db.createStatement().executeQuery(query);
-        while (rs.next())
-        {
+        while (rs.next()) {
+            clubLeague.append(rs.getString("league"));
+            clubLeague.append(", ");
+        }
+        clubLeague.deleteCharAt(clubLeague.length() - 2);
+        return clubLeague.toString();
+    }
+
+    public String getClubCountry(String id) throws SQLException { String clubCountry = null; String query = "select country from club where club_id = " + id + ";";
+        ResultSet rs = db.createStatement().executeQuery(query);
+        while (rs.next()) {
             clubCountry = rs.getString("country");
         }
         return clubCountry;
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String clubID = ClubOverview.clubID;
         try {
             clubName.setText(getClubName(clubID));
             clubRegion.setText(getClubCountry(clubID));
+            clubLeague.setText(getClubLeague(clubID));
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        clubLeague.setText("Huhu, huhu, hihi");
     }
 }

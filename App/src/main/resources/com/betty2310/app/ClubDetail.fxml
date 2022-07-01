@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="601.0" prefWidth="1072.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.ClubDetail">
+<AnchorPane prefHeight="601.0" prefWidth="1072.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.ClubDetail">
    <children>
       <GridPane hgap="10.0" layoutX="17.0" layoutY="31.0" prefHeight="527.0" prefWidth="1019.0" vgap="10.0">
          <columnConstraints>
@@ -26,19 +25,19 @@
             <RowConstraints maxHeight="319.0" minHeight="10.0" prefHeight="319.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TableView prefHeight="200.0" prefWidth="265.0" GridPane.rowIndex="1">
+            <TableView prefHeight="200.0" prefWidth="265.0" stylesheets="@style.css" GridPane.rowIndex="1">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
               </columns>
             </TableView>
-            <TableView prefHeight="311.0" prefWidth="510.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TableView prefHeight="311.0" prefWidth="510.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
               </columns>
             </TableView>
-            <TableView prefHeight="203.0" prefWidth="618.0" GridPane.columnIndex="1">
+            <TableView prefHeight="203.0" prefWidth="618.0" stylesheets="@style.css" GridPane.columnIndex="1">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
