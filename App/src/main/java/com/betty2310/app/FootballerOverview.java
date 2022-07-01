@@ -25,6 +25,14 @@ public class FootballerOverview implements Initializable {
     public TableView<FootballerOverviewTable> table;
     public TableColumn<FootballerOverviewTable, String> colName;
     public TableColumn<FootballerOverviewTable, String> colID;
+    public TableColumn<FootballerOverviewTable, String> colINation;
+    public TableColumn<FootballerOverviewTable, Integer> colHeight;
+    public TableColumn<FootballerOverviewTable, Integer> colIAge;
+    public TableColumn<FootballerOverviewTable, Integer> colWeight;
+    public TableColumn<FootballerOverviewTable, Integer> colPrice;
+    public TableColumn<FootballerOverviewTable, String> colFoot;
+    public TableColumn<FootballerOverviewTable, String> colClub;
+    public TableColumn<FootballerOverviewTable, String> colCoach;
 
     private ObservableList<FootballerOverviewTable> data;
 
@@ -37,14 +45,22 @@ public class FootballerOverview implements Initializable {
 
             table.setPlaceholder(new Label("No rows to display"));
 
-            ResultSet rs = connection.createStatement().executeQuery("SELECT footballer_id, name FROM footballer LIMIT 100;");
+            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM footballer_overview;");
 
             while (rs.next()) {
-                data.add(new FootballerOverviewTable(Integer.toString(rs.getInt("footballer_id")), rs.getString("name")));
+                data.add(new FootballerOverviewTable(Integer.toString(rs.getInt("footballer_id")), rs.getString("name"), rs.getString("nationality"), rs.getInt("height"), rs.getInt("weight"), rs.getInt("age"), rs.getString("stronger_foot").charAt(0), rs.getInt("price"), rs.getString("club"), rs.getString("coach")));
             }
 
             colID.setCellValueFactory(new PropertyValueFactory<>("footballer_id"));
             colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+            colINation.setCellValueFactory(new PropertyValueFactory<>("nationality"));
+            colHeight.setCellValueFactory(new PropertyValueFactory<>("height"));
+            colWeight.setCellValueFactory(new PropertyValueFactory<>("weight"));
+            colIAge.setCellValueFactory(new PropertyValueFactory<>("age"));
+            colFoot.setCellValueFactory(new PropertyValueFactory<>("stronger_foot"));
+            colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+            colClub.setCellValueFactory(new PropertyValueFactory<>("club"));
+            colCoach.setCellValueFactory(new PropertyValueFactory<>("coach"));
             table.setItems(data);
 
         } catch (SQLException e) {

@@ -4,12 +4,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="589.0" prefWidth="911.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.FootballerOverview">
+<AnchorPane prefHeight="589.0" prefWidth="1027.0" style="-fx-background-color: #ECEFF4#ECEFF4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.FootballerOverview">
    <children>
-      <TableView fx:id="table" layoutX="20.0" layoutY="19.0" onMouseClicked="#handleFootballer" prefHeight="353.0" prefWidth="872.0" stylesheets="@style.css">
+      <TableView fx:id="table" layoutX="20.0" layoutY="19.0" onMouseClicked="#handleFootballer" prefHeight="353.0" prefWidth="1001.0" stylesheets="@style.css">
         <columns>
-          <TableColumn id="colID" fx:id="colID" prefWidth="447.0" style="-fx-alignment: CENTER;" text="ID" />
-          <TableColumn id="colName" fx:id="colName" minWidth="0.0" prefWidth="421.0" style="-fx-alignment: CENTER;" text="NAME" />
+          <TableColumn id="colID" fx:id="colID" prefWidth="57.0" style="-fx-alignment: CENTER;" text="ID" />
+          <TableColumn id="colName" fx:id="colName" minWidth="0.0" prefWidth="136.0" style="-fx-alignment: CENTER;" text="NAME" />
+            <TableColumn id="colID" fx:id="colINation" prefWidth="128.0" style="-fx-alignment: CENTER;" text="nationality" />
+            <TableColumn id="colID" fx:id="colHeight" prefWidth="51.07958984375" style="-fx-alignment: CENTER;" text="height" />
+            <TableColumn id="colID" fx:id="colWeight" prefWidth="67.0" style="-fx-alignment: CENTER;" text="weight" />
+            <TableColumn id="colID" fx:id="colIAge" prefWidth="61.0" style="-fx-alignment: CENTER;" text="age" />
+            <TableColumn id="colID" fx:id="colFoot" prefWidth="84.0" style="-fx-alignment: CENTER;" text="stronger_foot" />
+            <TableColumn id="colID" fx:id="colPrice" prefWidth="104.0" style="-fx-alignment: CENTER;" text="price" />
+            <TableColumn id="colID" fx:id="colClub" minWidth="0.0" prefWidth="183.0" style="-fx-alignment: CENTER;" text="club" />
+            <TableColumn id="colID" fx:id="colCoach" minWidth="0.0" prefWidth="126.0" style="-fx-alignment: CENTER;" text="coach" />
         </columns>
       </TableView>
    </children>
