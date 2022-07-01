@@ -1,8 +1,6 @@
 package com.betty2310.app;
 
 import com.betty2310.app.connection.Database;
-import com.betty2310.app.model.ClubOverviewTable;
-import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 

@@ -2,7 +2,7 @@ package com.betty2310.app.model;
 
 public class CoachOverviewTable {
     private Integer coach_id;
-    private String coachname;
+    private String coach;
 
     private String club;
 
@@ -12,12 +12,12 @@ public class CoachOverviewTable {
 
     public CoachOverviewTable(Integer coach_id, String name, String club, Integer trophy) {
         this.coach_id = coach_id;
-        this.coachname = name;
+        this.coach = name;
         this.club = club;
         this.totaltrophy = trophy;
     }
-    public String getCoachname() {
-        return this.coachname;
+    public String getCoach() {
+        return this.coach;
     }
 
     public Integer getCoach_id() {

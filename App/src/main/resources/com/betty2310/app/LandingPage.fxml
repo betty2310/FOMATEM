@@ -117,7 +117,7 @@
             <Pane fx:id="pnHome" style="-fx-background-color: #ECEFF4#ECEFF4;" />
          </children>
       </StackPane>
-      <HBox layoutX="203.0" layoutY="62.0" prefHeight="80.0" prefWidth="564.0" spacing="30.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="52.0">
+      <HBox layoutX="224.0" layoutY="60.0" prefHeight="80.0" prefWidth="564.0" spacing="30.0" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="31.0">
          <children>
             <Pane style="-fx-background-color: #a3be8c#a3be8c; -fx-background-radius: 1em;">
                <children>

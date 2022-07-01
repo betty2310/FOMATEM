@@ -59,7 +59,8 @@ public class ClubOverview implements Initializable {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ClubDetail.fxml"));
                 Parent window = fxmlLoader.load();
                 Stage stage = new Stage();
-                stage.setTitle("Club Detail");
+                String title = rowData.getClubName() + " Club";
+                stage.setTitle(title);
                 stage.setScene(new Scene(window));
                 stage.show();
             } catch (IOException e) {
@@ -94,11 +95,8 @@ public class ClubOverview implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         data = FXCollections.observableArrayList();
         try {
-            Database db = new Database();
-            Connection connection = db.connection();
-
+            Connection connection = new Database().connection();
             table.setPlaceholder(new Label("No rows to display"));
-
             ResultSet rs = connection.createStatement().executeQuery(handleQuery());
 
             while (rs.next()) {

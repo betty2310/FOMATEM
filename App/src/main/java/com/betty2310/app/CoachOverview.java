@@ -52,7 +52,7 @@ public class CoachOverview implements Initializable {
 
     public String handleQuery() {
         String query =  "SELECT * FROM coach_overview"
-                + " WHERE coachname LIKE '%" + CoachPane.coachName + "%'"
+                + " WHERE coach LIKE '%" + CoachPane.coachName + "%'"
                 + " AND club LIKE '%" + CoachPane.coachClub + "%'"
                 + ";";
         return query;
@@ -70,11 +70,11 @@ public class CoachOverview implements Initializable {
             ResultSet rs = connection.createStatement().executeQuery(handleQuery());
 
             while (rs.next()) {
-                data.add(new CoachOverviewTable(rs.getInt("coach_id"), rs.getString("coachname"), rs.getString("club"), rs.getInt("totaltrophy")));
+                data.add(new CoachOverviewTable(rs.getInt("coach_id"), rs.getString("coach"), rs.getString("club"), rs.getInt("totaltrophy")));
             }
 
             colID.setCellValueFactory(new PropertyValueFactory<>("coach_id"));
-            colName.setCellValueFactory(new PropertyValueFactory<>("coachname"));
+            colName.setCellValueFactory(new PropertyValueFactory<>("coach"));
             colClub.setCellValueFactory(new PropertyValueFactory<>("club"));
             colTrophy.setCellValueFactory(new PropertyValueFactory<>("totaltrophy"));
             table.setItems(data);
