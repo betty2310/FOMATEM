@@ -64,6 +64,13 @@ public class FootballerOverview implements Initializable {
         if (checNullOrEmpty(FootballerPane.weight)) {
             query += " and weight >= " + FootballerPane.weight;
         }
+
+        if (checNullOrEmpty(FootballerPane.rating)) {
+            query = "select footballer_id, name, nationality, height, weight, age, stronger_foot, price, club, coach from (" +
+                    query +
+                    ") as \"fo\"" +
+                    " natural join footballer_rating order by " + FootballerPane.rating + ";";
+        }
         return query;
     }
 
@@ -102,7 +109,7 @@ public class FootballerOverview implements Initializable {
             mouseEvent.consume();
             FootballerOverviewTable rowData = table.getSelectionModel().getSelectedItem();
             if (rowData == null) return;
-            id =  rowData.getFootballer_id();
+            id = rowData.getFootballer_id();
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FootballerDetail.fxml"));
                 Parent window = fxmlLoader.load();
