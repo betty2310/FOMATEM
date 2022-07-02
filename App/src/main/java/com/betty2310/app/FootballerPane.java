@@ -1,6 +1,5 @@
 package com.betty2310.app;
 
-import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
@@ -17,8 +16,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FootballerPane implements Initializable {
-    public MFXCheckbox sortRating;
-    public MFXCheckbox sortAbility;
     @FXML
     private MFXComboBox<String> listAbility;
     @FXML
@@ -41,13 +38,6 @@ public class FootballerPane implements Initializable {
     private TextField tfHeight;
     @FXML
     private TextField tfWeight;
-
-    @FXML
-    private TextField tfAbility;
-
-    @FXML
-    private TextField tfRate;
-
     public static String ability;
     public static String foot;
     public static String rating;
@@ -59,8 +49,8 @@ public class FootballerPane implements Initializable {
     public static String nation;
     public static String height;
     public static String weight;
-    public static String nAbility;
-    public static String nRate;
+
+
 
     void setItemListAbility() {
         listAbility.getItems().add("offensive");
@@ -148,8 +138,6 @@ public class FootballerPane implements Initializable {
         foot = listFBfoot.getValue();
         role = listRole.getValue();
         rating = listRating.getValue();
-        nAbility = tfAbility.getText();
-        nRate = tfRate.getText();
     }
     public void queryFootballerAction(ActionEvent event) {
         try {
