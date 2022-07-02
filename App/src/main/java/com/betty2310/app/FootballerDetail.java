@@ -17,6 +17,7 @@ public class FootballerDetail implements Initializable {
     public Connection db = new Database().connection();
 
     public String id = FootballerOverview.id;
+    public Label name11;
 
     public String getName(String id) throws SQLException {
         String name = null;
