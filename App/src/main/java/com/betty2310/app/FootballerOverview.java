@@ -47,31 +47,39 @@ public class FootballerOverview implements Initializable {
     }
 
     public String handleQuery() {
-        String query = "select * from footballer_overview where name LIKE '%" + FootballerPane.name + "%'" +
+        String query = "select * from footballer_overview where ";
+        String condition = "name LIKE '%" + FootballerPane.name + "%'" +
                 " and nationality LIKE '%" + FootballerPane.nation + "%'" +
                 " and club LIKE '%" + FootballerPane.club + "%'" +
                 " and coach LIKE '%" + FootballerPane.coach + "%'";
-
         if (checNullOrEmpty(FootballerPane.foot)) {
-            query += " and stronger_foot = '" + FootballerPane.foot + "'";
+            condition += " and stronger_foot = '" + FootballerPane.foot + "'";
         }
         if (checNullOrEmpty(FootballerPane.age)) {
-            query += " and age >= " + FootballerPane.age;
+            condition += " and age >= " + FootballerPane.age;
         }
         if (checNullOrEmpty(FootballerPane.height)) {
-            query += " and height >= " + FootballerPane.height;
+            condition += " and height >= " + FootballerPane.height;
         }
         if (checNullOrEmpty(FootballerPane.weight)) {
-            query += " and weight >= " + FootballerPane.weight;
+            condition += " and weight >= " + FootballerPane.weight;
         }
+        String conditionRating = "select footballer_id, name, nationality, height, weight, age, stronger_foot, price, club, coach from (" +
+                query + condition +
+                ") as \"fo\"" +
+                " natural join footballer_rating order by " + FootballerPane.rating;
+        String conditionRole = "select * from (select footballer_id from footballer_position where position = '" + FootballerPane.role + "') as \"fo\" natural join footballer_overview where " + condition;
 
-        if (checNullOrEmpty(FootballerPane.rating)) {
-            query = "select footballer_id, name, nationality, height, weight, age, stronger_foot, price, club, coach from (" +
-                    query +
-                    ") as \"fo\"" +
-                    " natural join footballer_rating order by " + FootballerPane.rating + ";";
+        if (checNullOrEmpty(FootballerPane.rating) && !checNullOrEmpty(FootballerPane.role)) {
+            return conditionRating;
         }
-        return query;
+        if (!checNullOrEmpty(FootballerPane.rating) && checNullOrEmpty(FootballerPane.role)) {
+            return conditionRole;
+        }
+        if (checNullOrEmpty(FootballerPane.role) && checNullOrEmpty(FootballerPane.rating)) {
+            return "(" + conditionRating + ")" + " intersect " + "(" + conditionRole + ");";
+        }
+        return query + condition;
     }
 
     @Override
