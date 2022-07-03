@@ -55,6 +55,11 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
+                              <Label alignment="BASELINE_LEFT" prefHeight="63.0" prefWidth="75.0" text="Foot" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </VBox>
                         <VBox prefHeight="301.0" prefWidth="318.0">
@@ -70,6 +75,11 @@
                                  </font>
                               </Label>
                               <Label fx:id="club" alignment="BASELINE_LEFT" prefHeight="63.0" prefWidth="221.0" text="Label" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="foot" alignment="BASELINE_LEFT" prefHeight="63.0" prefWidth="221.0" text="Label" wrapText="true">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -120,32 +130,32 @@
                   <VBox prefHeight="301.0" prefWidth="126.0">
                      <children>
                         <Pane prefHeight="15.0" prefWidth="124.0" />
-                        <Label fx:id="name1" alignment="BASELINE_LEFT" prefHeight="37.0" prefWidth="96.0" text="Label" wrapText="true">
+                        <Label fx:id="age" alignment="BASELINE_LEFT" prefHeight="37.0" prefWidth="96.0" text="Label" wrapText="true">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="coach1" alignment="BASELINE_LEFT" prefHeight="36.0" prefWidth="135.0" text="Label" wrapText="true">
+                        <Label fx:id="dob" alignment="BASELINE_LEFT" prefHeight="36.0" prefWidth="135.0" text="Label" wrapText="true">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="club1" alignment="BASELINE_LEFT" prefHeight="49.0" prefWidth="124.0" text="Label" wrapText="true">
+                        <Label fx:id="height" alignment="BASELINE_LEFT" prefHeight="49.0" prefWidth="124.0" text="Label" wrapText="true">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="BASELINE_LEFT" prefHeight="31.0" prefWidth="69.0" text="Label" wrapText="true">
+                        <Label fx:id="weight" alignment="BASELINE_LEFT" prefHeight="31.0" prefWidth="69.0" text="Label" wrapText="true">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="BASELINE_LEFT" prefHeight="47.0" prefWidth="124.0" text="Label" wrapText="true">
+                        <Label fx:id="country" alignment="BASELINE_LEFT" prefHeight="47.0" prefWidth="124.0" text="Label" wrapText="true">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="BASELINE_LEFT" prefHeight="30.0" prefWidth="97.0" text="Label" wrapText="true">
+                        <Label fx:id="price" alignment="BASELINE_LEFT" prefHeight="30.0" prefWidth="97.0" text="Label" wrapText="true">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -177,26 +187,26 @@
                         <RowConstraints maxHeight="49.0" minHeight="6.0" prefHeight="27.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" disable="true" prefHeight="17.0" prefWidth="57.0" text="GK" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label alignment="CENTER" disable="true" prefHeight="17.0" prefWidth="55.0" text="CB" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" disable="true" prefHeight="17.0" prefWidth="55.0" text="LB" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" disable="true" prefHeight="17.0" prefWidth="55.0" text="RB" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" disable="true" prefHeight="17.0" prefWidth="55.0" text="LMF" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" disable="true" prefHeight="17.0" prefWidth="55.0" text="RMF" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" disable="true" prefHeight="17.0" prefWidth="55.0" text="LWF" />
-                        <Label alignment="CENTER" disable="true" prefHeight="17.0" prefWidth="55.0" text="RWF" GridPane.columnIndex="2" />
+                        <Label fx:id="gk" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="57.0" text="GK" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="cb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="CB" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="lb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LB" GridPane.rowIndex="2" />
+                        <Label fx:id="rb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RB" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="lmf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LMF" GridPane.rowIndex="1" />
+                        <Label fx:id="rmf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RMF" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="lwf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LWF" />
+                        <Label fx:id="rwf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RWF" GridPane.columnIndex="2" />
                         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                            <children>
                               <Pane prefHeight="20.0" prefWidth="54.0" />
-                              <Label alignment="CENTER" disable="true" prefHeight="33.0" prefWidth="54.0" text="CF" />
-                              <Label alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="54.0" text="SS" />
+                              <Label fx:id="cf" alignment="CENTER" opacity="0.0" prefHeight="33.0" prefWidth="54.0" text="CF" />
+                              <Label fx:id="ss" alignment="CENTER" opacity="0.0" prefHeight="26.0" prefWidth="54.0" text="SS" />
                            </children>
                         </VBox>
                         <VBox prefHeight="69.0" prefWidth="54.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <Label alignment="CENTER" disable="true" prefHeight="19.0" prefWidth="54.0" text="AMF" />
-                              <Label alignment="CENTER" disable="true" prefHeight="35.0" prefWidth="54.0" text="CMF" />
-                              <Label alignment="CENTER" disable="true" prefHeight="28.0" prefWidth="54.0" text="DMF" />
+                              <Label fx:id="amf" alignment="CENTER" opacity="0.0" prefHeight="19.0" prefWidth="54.0" text="AMF" />
+                              <Label fx:id="cmf" alignment="CENTER" opacity="0.0" prefHeight="35.0" prefWidth="54.0" text="CMF" />
+                              <Label fx:id="dmf" alignment="CENTER" opacity="0.0" prefHeight="28.0" prefWidth="54.0" text="DMF" />
                            </children>
                         </VBox>
                      </children>
@@ -232,22 +242,22 @@
                   </VBox>
                   <VBox prefHeight="205.0" prefWidth="510.0">
                      <children>
-                        <Label prefHeight="41.0" prefWidth="531.0" text="Label">
+                        <Label fx:id="trophys" prefHeight="41.0" prefWidth="531.0" text="Label">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="43.0" prefWidth="536.0" text="Label">
+                        <Label fx:id="clubs" prefHeight="43.0" prefWidth="536.0" text="Label">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="43.0" prefWidth="554.0" text="Label">
+                        <Label fx:id="coachs" prefHeight="43.0" prefWidth="554.0" text="Label">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="44.0" prefWidth="516.0" text="Label">
+                        <Label fx:id="leagues" prefHeight="44.0" prefWidth="516.0" text="Label">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -266,7 +276,7 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <Label alignment="TOP_LEFT" prefHeight="183.0" prefWidth="222.0" text="Label">
+                  <Label fx:id="skill" alignment="TOP_LEFT" prefHeight="183.0" prefWidth="222.0" text="Label">
                      <padding>
                         <Insets left="10.0" />
                      </padding></Label>
