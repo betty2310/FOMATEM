@@ -1,9 +1,12 @@
 package com.betty2310.app;
 
 import com.betty2310.app.connection.Database;
+import io.github.palexdev.materialfx.controls.legacy.MFXLegacyComboBox;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -18,6 +21,13 @@ public class FootballerDetail implements Initializable {
     public Label name;
     public Label foot;
     public Label skill;
+    public MFXLegacyComboBox listAbility;
+    public MFXLegacyComboBox listRate;
+    public Label valueAbility;
+    public Label valueRate;
+    public Label name1;
+    public Label name2;
+    public Label posRef;
     @FXML
     private Label age;
 
@@ -294,11 +304,81 @@ public class FootballerDetail implements Initializable {
 
     }
 
+    void setItemListRate() {
+        listRate.getItems().add("as_gk");
+        listRate.getItems().add("as_lb");
+        listRate.getItems().add("as_rb");
+        listRate.getItems().add("as_cb");
+        listRate.getItems().add("as_dmf");
+        listRate.getItems().add("as_lmf");
+        listRate.getItems().add("as_rmf");
+        listRate.getItems().add("as_cmf");
+        listRate.getItems().add("as_amf");
+        listRate.getItems().add("as_lwf");
+        listRate.getItems().add("as_rwf");
+        listRate.getItems().add("as_ss");
+        listRate.getItems().add("as_cf");
+        listRate.getItems().add("");
+    }
+
+    void setItemsListAbility() {
+        listAbility.getItems().add("offensive_awareness");
+        listAbility.getItems().add("ball_control");
+        listAbility.getItems().add("dribbling");
+        listAbility.getItems().add("tight_possession");
+        listAbility.getItems().add("low_pass");
+        listAbility.getItems().add("lofted_pass");
+        listAbility.getItems().add("finishing");
+        listAbility.getItems().add("heading");
+        listAbility.getItems().add("set_piece_taking");
+        listAbility.getItems().add("curl");
+        listAbility.getItems().add("speed");
+        listAbility.getItems().add("acceleration");
+        listAbility.getItems().add("kicking_power");
+        listAbility.getItems().add("jumping");
+        listAbility.getItems().add("physical_contact");
+        listAbility.getItems().add("balance");
+        listAbility.getItems().add("stamina");
+        listAbility.getItems().add("defensive_awareness");
+        listAbility.getItems().add("tackling");
+        listAbility.getItems().add("defensive_engagement");
+        listAbility.getItems().add("gk_awareness");
+        listAbility.getItems().add("gk_catching");
+        listAbility.getItems().add("gk_parrying");
+        listAbility.getItems().add("gk_reflexes");
+        listAbility.getItems().add("gk_reach");
+        listAbility.getItems().add("weak_foot_usage");
+        listAbility.getItems().add("weak_foot_accuracy");
+        listAbility.getItems().add("form");
+        listAbility.getItems().add("injury_resistance");
+    }
+
+    void setTextPositionRef() {
+        String st = "1. GK: goal keeper\n" +
+                "2. CB: centre back\n"+
+                "3. RB: right back\n"+
+                "4. LB: left back\n"+
+                "5. DMF: defensive mid fielder\n"+
+                "6. CMF: centre mid fielder\n"+
+                "7. AMF: attacking mid fielder\n"+
+                "8. LMF: left winger forward\n"+
+                "9. RMF: right winger forward\n"+
+                "10. SS: second striker\n"+
+                "11. LWF: left winger forward\n"+
+                "12. RWF: right winger forward\n"+
+                "13. CF: centre forward\n";
+       posRef.setText(st);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String id = FootballerOverview.id;
+        setItemListRate();
+        setItemsListAbility();
+        setTextPositionRef();
         try {
             name.setText(getName(id));
+            name1.setText(getName(id));
+            name2.setText(getName(id));
             club.setText(getClubName(id));
             coach.setText(getCoachName(id));
             foot.setText(getFoot(id));
@@ -312,9 +392,24 @@ public class FootballerDetail implements Initializable {
             coachs.setText(getCoaches(id));
             leagues.setText(getLeagues(id));
             setPosition(id);
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void calRate(ActionEvent event) throws SQLException {
+        String st = (String) listRate.getValue();
+        ResultSet rs = db.createStatement().executeQuery("select " + st + " from footballer_rating where footballer_id = " + id + ";");
+        while (rs.next()) {
+            valueRate.setText(rs.getString(st));
+        }
+    }
+
+    public void calAbility(ActionEvent event) throws SQLException {
+        String st = (String) listAbility.getValue();
+        ResultSet rs = db.createStatement().executeQuery("select " + st + " from footballer_ability where footballer_id = " + id + ";");
+        while (rs.next()) {
+            valueAbility.setText(rs.getString(st));
         }
     }
 }
