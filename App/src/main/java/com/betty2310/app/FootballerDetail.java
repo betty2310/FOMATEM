@@ -258,6 +258,42 @@ public class FootballerDetail implements Initializable {
         }
     }
 
+    public String getCoaches(String id) throws SQLException {
+        StringBuilder str = new StringBuilder();
+        String query = "WITH club_and_time(club_id) AS (\n" +
+                "    SELECT club_id\n" +
+                "    FROM enrollment\n" +
+                "    WHERE footballer_id = " + id + "\n" +
+                ")\n" +
+                "SELECT coach.name\n" +
+                "FROM club\n" +
+                "         NATURAL JOIN club_and_time\n" +
+                "         LEFT JOIN coach ON club.coach_id = coach.coach_id;";
+        ResultSet rs = db.createStatement().executeQuery(query);
+        while (rs.next()) {
+            str.append(rs.getString("name")).append(", ");
+        }
+        return str.toString();
+
+    }
+
+    public String getLeagues(String id) throws SQLException {
+        StringBuilder str = new StringBuilder();
+        String query = "SELECT DISTINCT league\n" +
+                "FROM club_league\n" +
+                "WHERE club_id IN (\n" +
+                "    SELECT club_id\n" +
+                "    FROM enrollment\n" +
+                "    WHERE footballer_id = " + id + "\n" +
+                "    );";
+        ResultSet rs = db.createStatement().executeQuery(query);
+        while (rs.next()) {
+            str.append(rs.getString("league")).append(", ");
+        }
+        return str.toString();
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String id = FootballerOverview.id;
@@ -273,6 +309,8 @@ public class FootballerDetail implements Initializable {
             country.setText(getCountry(id));
             price.setText(getPrice(id));
             skill.setText(getSkills(id));
+            coachs.setText(getCoaches(id));
+            leagues.setText(getLeagues(id));
             setPosition(id);
 
         } catch (SQLException e) {
