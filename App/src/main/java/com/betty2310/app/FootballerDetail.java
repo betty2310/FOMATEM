@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -184,7 +183,7 @@ public class FootballerDetail implements Initializable {
         String query = "select price from footballer_overview where footballer_id = " + id + ";";
         ResultSet rs = db.createStatement().executeQuery(query);
         while (rs.next()) {
-            str = rs.getString("price");
+            str = rs.getString("price") + "$";
         }
         return str;
     }
@@ -355,20 +354,21 @@ public class FootballerDetail implements Initializable {
 
     void setTextPositionRef() {
         String st = "1. GK: goal keeper\n" +
-                "2. CB: centre back\n"+
-                "3. RB: right back\n"+
-                "4. LB: left back\n"+
-                "5. DMF: defensive mid fielder\n"+
-                "6. CMF: centre mid fielder\n"+
-                "7. AMF: attacking mid fielder\n"+
-                "8. LMF: left winger forward\n"+
-                "9. RMF: right winger forward\n"+
-                "10. SS: second striker\n"+
-                "11. LWF: left winger forward\n"+
-                "12. RWF: right winger forward\n"+
+                "2. CB: centre back\n" +
+                "3. RB: right back\n" +
+                "4. LB: left back\n" +
+                "5. DMF: defensive mid fielder\n" +
+                "6. CMF: centre mid fielder\n" +
+                "7. AMF: attacking mid fielder\n" +
+                "8. LMF: left winger forward\n" +
+                "9. RMF: right winger forward\n" +
+                "10. SS: second striker\n" +
+                "11. LWF: left winger forward\n" +
+                "12. RWF: right winger forward\n" +
                 "13. CF: centre forward\n";
-       posRef.setText(st);
+        posRef.setText(st);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String id = FootballerOverview.id;
