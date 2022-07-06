@@ -18,6 +18,8 @@ public class CoachPane {
     public static String coachClub;
     public static String coachFootballer;
 
+    public static String log = "";
+
     public void setValueFilter() {
         coachClub = tfCoachClub.getText();
         coachName = tfCoachName.getText();
@@ -38,5 +40,17 @@ public class CoachPane {
     }
 
     public void queryCoachLog(ActionEvent event) {
+        try {
+            log = "coach_log";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Log.fxml"));
+            Parent window = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Coach Log");
+            stage.setScene(new Scene(window));
+            stage.show();
+            log = "";
+        } catch (IOException e) {
+            System.out.println("Can't load Coach Log window.");
+        }
     }
 }

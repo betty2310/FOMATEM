@@ -28,6 +28,8 @@ public class ClubPane implements Initializable {
     public static String leagueName;
     public static String trophyName;
 
+    public static String log = "";
+
     void setValueFilter() {
         clubName = tfClubName.getText();
         countryName = tfClubCountry.getText();
@@ -87,6 +89,17 @@ public class ClubPane implements Initializable {
     }
 
     public void queryClubLog(ActionEvent event) {
-
+        try {
+            log = "club_log";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Log.fxml"));
+            Parent window = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Club Log");
+            stage.setScene(new Scene(window));
+            stage.show();
+            log = "";
+        } catch (IOException e) {
+            System.out.println("Can't load Club Log window.");
+        }
     }
 }

@@ -26,30 +26,28 @@ public class Log implements Initializable {
     private Connection connection = new Database().connection();
     private ObservableList<LogTable> data;
 
+    void setupTable() {
+        colId = new MFXTableColumn<>("id", true, Comparator.comparing(LogTable::getId));
+        colStamp = new MFXTableColumn<>("stamp", true, Comparator.comparing(LogTable::getStamp));
+        colOperation = new MFXTableColumn<>("operation", true, Comparator.comparing(LogTable::getOperation));
+
+        colId.setRowCellFactory(logTable -> new MFXTableRowCell<>(LogTable::getId));
+        colStamp.setRowCellFactory(logTable -> new MFXTableRowCell<>(LogTable::getStamp));
+        colOperation.setRowCellFactory(logTable -> new MFXTableRowCell<>(LogTable::getOperation));
+        table.getTableColumns().addAll(colId, colStamp, colOperation);
+        table.setItems(data);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         data = FXCollections.observableArrayList();
         try {
-            ResultSet rs = connection.createStatement().executeQuery("select * from footballer_log;");
-            while (rs.next())
-            {
+            String log = FootballerPane.log + CoachPane.log + ClubPane.log;
+            ResultSet rs = connection.createStatement().executeQuery("select * from " + log);
+            while (rs.next()) {
                 data.add(new LogTable(rs.getString("stamp"), rs.getString("operation").charAt(0), rs.getInt("id")));
             }
-
-            colId = new MFXTableColumn<>("id", true, Comparator.comparing(LogTable::getId));
-            colStamp = new MFXTableColumn<>("stamp", true, Comparator.comparing(LogTable::getStamp));
-            colOperation = new MFXTableColumn<>("operation", true, Comparator.comparing(LogTable::getOperation));
-
-            colId.setRowCellFactory(logTable -> new MFXTableRowCell<>(LogTable::getId));
-            colStamp.setRowCellFactory(logTable -> new MFXTableRowCell<>(LogTable::getStamp));
-            colOperation.setRowCellFactory(logTable -> new MFXTableRowCell<>(LogTable::getOperation));
-
-            table.getTableColumns().addAll(colId, colStamp, colOperation);
-
-            table.setItems(data);
-
-
+            setupTable();
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
         }

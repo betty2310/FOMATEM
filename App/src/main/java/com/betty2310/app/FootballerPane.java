@@ -50,6 +50,7 @@ public class FootballerPane implements Initializable {
     public static String height;
     public static String weight;
 
+    public static String log = "";
 
 
     void setItemListAbility() {
@@ -154,6 +155,18 @@ public class FootballerPane implements Initializable {
     }
 
     public void queryFootBallerLog(ActionEvent event) {
+        try {
+            log = "footballer_log";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Log.fxml"));
+            Parent window = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Footballer Log");
+            stage.setScene(new Scene(window));
+            stage.show();
+            log = "";
+        } catch (IOException e) {
+            System.out.println("Can't load Footballer Log window.");
+        }
     }
 
     @Override
