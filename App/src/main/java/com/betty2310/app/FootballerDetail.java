@@ -200,6 +200,36 @@ public class FootballerDetail implements Initializable {
         return str.toString();
     }
 
+    public String getTrophys(String id) throws SQLException {
+        StringBuilder str = new StringBuilder();
+        String query = "select  club_trophy.name from enrollment" +
+                " join club_trophy on (" +
+                " enrollment.club_id = club_trophy.club_id" +
+                " and" +
+                " enrollment.enrollment_start < club_trophy.date)" +
+                " where footballer_id = " + id + ";";
+        ResultSet rs = db.createStatement().executeQuery(query);
+        while (rs.next()) {
+            str.append(rs.getString("name")).append(", ");
+        }
+        return str.toString();
+    }
+    public String getClubs(String id) throws SQLException {
+        StringBuilder str = new StringBuilder();
+        String query = "SELECT DISTINCT league" +
+                " FROM club_league" +
+                " WHERE club_id IN (" +
+                " SELECT club_id" +
+                " FROM enrollment" +
+                " WHERE footballer_id = " +
+                id  +
+                ");";
+        ResultSet rs = db.createStatement().executeQuery(query);
+        while (rs.next()) {
+            str.append(rs.getString("league")).append(", ");
+        }
+        return str.toString();
+    }
     public String getFoot(String id) throws SQLException {
         String str = "";
         String query = "select stronger_foot from footballer_overview where footballer_id = " + id + ";";
@@ -391,6 +421,8 @@ public class FootballerDetail implements Initializable {
             skill.setText(getSkills(id));
             coachs.setText(getCoaches(id));
             leagues.setText(getLeagues(id));
+            trophys.setText(getTrophys(id));
+            clubs.setText(getClubs(id));
             setPosition(id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
