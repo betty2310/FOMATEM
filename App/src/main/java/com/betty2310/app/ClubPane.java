@@ -30,6 +30,9 @@ public class ClubPane implements Initializable {
 
     public static String log = "";
 
+    /**
+     *
+     */
     void setValueFilter() {
         clubName = tfClubName.getText();
         countryName = tfClubCountry.getText();
@@ -68,6 +71,11 @@ public class ClubPane implements Initializable {
         listTrophy.getItems().add("LLG Cup");
         listTrophy.getItems().add("FA Cup");
     }
+
+    /**
+     *
+     * @param event
+     */
     public void queryClubAction(ActionEvent event) {
         try {
             setValueFilter();
