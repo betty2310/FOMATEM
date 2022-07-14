@@ -63,7 +63,7 @@ Contributing is always welcome. Please feel free to open an issue or create a pu
 
 # Special Thanks & Credits
 
-+ [@Dao Kim Duong]() and @[Do Hoang Hieu]() for over 30 sql commands to query database.
++ [@Dao Kim Duong](https://github.com/kimduong322?fbclid=IwAR213U6fy_Q6Kvfm4b08EatKH006sv9EFKX0VV2cfcsfeBmLwCs7oSvIYYw) and [@Do Hoang Hieu](https://github.com/hieu748159263) for over 30 sql commands to query database.
 + [@AmirUCR](https://github.com/AmirUCR/jdbc_mechanic_shop.git) for [jdbc_mechanic_shop]() project - it helped me to understand how to use JDBC, JavaFX to build an application.
 + Using icon from [FontAwesome](https://fontawesome.com/) and website [Icons8](https://icons8.com/).
 + [MaterialFX](https://materialfx.io/) for beatiful design of button, table,....
