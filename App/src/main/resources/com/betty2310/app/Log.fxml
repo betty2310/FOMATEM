@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import io.github.palexdev.materialfx.controls.MFXTableView?>
 <?import javafx.scene.layout.AnchorPane?>
-
-
 <AnchorPane prefHeight="252.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.Log">
    <children>
       <MFXTableView fx:id="table" footerVisible="false" layoutX="15.0" layoutY="48.0" prefHeight="156.0" prefWidth="603.0" />

@@ -16,7 +16,6 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

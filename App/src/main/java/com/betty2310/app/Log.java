@@ -1,7 +1,6 @@
 package com.betty2310.app;
 
 import com.betty2310.app.connection.Database;
-import com.betty2310.app.model.FootballerOverviewTable;
 import com.betty2310.app.model.LogTable;
 import io.github.palexdev.materialfx.controls.MFXTableColumn;
 import io.github.palexdev.materialfx.controls.MFXTableView;
