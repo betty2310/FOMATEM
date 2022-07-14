@@ -7,7 +7,7 @@ An application to manage fooballer's information. Use [PostgreSQL](https://www.p
 # Features
 
 + Connect to local database `footballer_manager`
-+ Over 112000 players, 4000 clubs and 5000 total coachs
++ Over 112000 players, 4000 clubs and 5000 total coachs (*notes that all is sample data*)
 + List footballer's information overview as required
 + View footballer's information detail (also with club and coach)
 + View log of each action modifying infomation
@@ -67,6 +67,7 @@ Contributing is always welcome. Please feel free to open an issue or create a pu
 + [@AmirUCR](https://github.com/AmirUCR/jdbc_mechanic_shop.git) for [jdbc_mechanic_shop]() project - it helped me to understand how to use JDBC, JavaFX to build an application.
 + Using icon from [FontAwesome](https://fontawesome.com/) and website [Icons8](https://icons8.com/).
 + [MaterialFX](https://materialfx.io/) for beatiful design of button, table,....
++ [Synth](https://github.com/shuttle-hq/synth) for generate a lot of data to my database.
 
 # License
 
