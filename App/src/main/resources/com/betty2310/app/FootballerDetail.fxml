@@ -173,17 +173,17 @@
                   <Insets />
                </GridPane.margin>
             </HBox>
-            <StackPane style="-fx-background-color: #ECEFF4#ECEFF4; -fx-background-radius: 1em;" GridPane.columnIndex="2">
+            <StackPane prefHeight="296.0" prefWidth="162.0" style="-fx-background-color: #ECEFF4#ECEFF4; -fx-background-radius: 1em;" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="30.0" />
                </GridPane.margin>
                <children>
-                  <ImageView fitHeight="210.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="278.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icon/pitch.png" />
                      </image>
                   </ImageView>
-                  <GridPane prefHeight="301.0" prefWidth="164.0">
+                  <GridPane prefHeight="232.0" prefWidth="106.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -191,31 +191,32 @@
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="66.47088623046875" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="80.52911376953125" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="30.67791748046875" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="59.989532470703125" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="59.010467529296875" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="49.0" minHeight="6.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="gk" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="57.0" text="GK" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="cb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="CB" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="lb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LB" GridPane.rowIndex="2" />
-                        <Label fx:id="rb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RB" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="lmf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LMF" GridPane.rowIndex="1" />
-                        <Label fx:id="rmf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RMF" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="lwf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LWF" />
-                        <Label fx:id="rwf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RWF" GridPane.columnIndex="2" />
-                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                        <Label fx:id="gk" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="57.0" text="GK" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="cb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="CB" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="lb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LB" GridPane.rowIndex="3" />
+                        <Label fx:id="rb" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RB" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label fx:id="lmf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LMF" GridPane.rowIndex="2" />
+                        <Label fx:id="rmf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RMF" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="lwf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="LWF" GridPane.rowIndex="1" />
+                        <Label fx:id="rwf" alignment="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="55.0" text="RWF" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <VBox prefHeight="61.0" prefWidth="44.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <Pane prefHeight="20.0" prefWidth="54.0" />
-                              <Label fx:id="cf" alignment="CENTER" opacity="0.0" prefHeight="33.0" prefWidth="54.0" text="CF" />
-                              <Label fx:id="ss" alignment="CENTER" opacity="0.0" prefHeight="26.0" prefWidth="54.0" text="SS" />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="69.0" prefWidth="54.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <children>
-                              <Label fx:id="amf" alignment="CENTER" opacity="0.0" prefHeight="19.0" prefWidth="54.0" text="AMF" />
+                              <Label fx:id="amf" alignment="CENTER" opacity="0.0" prefHeight="26.0" prefWidth="44.0" text="AMF" />
                               <Label fx:id="cmf" alignment="CENTER" opacity="0.0" prefHeight="35.0" prefWidth="54.0" text="CMF" />
                               <Label fx:id="dmf" alignment="CENTER" opacity="0.0" prefHeight="28.0" prefWidth="54.0" text="DMF" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="cf" alignment="CENTER" opacity="0.0" prefHeight="21.0" prefWidth="44.0" text="CF" />
+                              <Label fx:id="ss" alignment="CENTER" opacity="0.0" prefHeight="26.0" prefWidth="54.0" text="SS" />
                            </children>
                         </VBox>
                      </children>
