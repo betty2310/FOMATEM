@@ -2,7 +2,7 @@
 
 An application to manage fooballer's information. Use [PostgreSQL](https://www.postgresql.org/) as local database.
 
-![](./assets/app.png)
+![](./assets/overview.png)
 
 # Features
 
