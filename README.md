@@ -71,4 +71,5 @@ Contributing is always welcome. Please feel free to open an issue or create a pu
 
 # License
 
-    This project is licensed under the [MIT](https://github.com/betty2310/FOMATEM/blob/main/LICENSE) license.
+This project is licensed under the [MIT](https://github.com/betty2310/FOMATEM/blob/main/LICENSE) license.
+
