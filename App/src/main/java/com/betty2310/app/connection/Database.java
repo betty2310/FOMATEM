@@ -5,6 +5,8 @@ import com.betty2310.app.Login;
 import java.sql.*;
 
 public class Database {
+
+    public static String logMessage;
     public Connection connection() {
 
         final String url = "jdbc:postgresql://localhost:5432/" + Login.databaseName;
@@ -15,7 +17,7 @@ public class Database {
         try {
             conn = DriverManager.getConnection(url, user, pass);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logMessage = e.getMessage();
         }
         return conn;
     }

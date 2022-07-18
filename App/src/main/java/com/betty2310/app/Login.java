@@ -2,6 +2,7 @@ package com.betty2310.app;
 
 import com.betty2310.app.connection.Database;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +30,7 @@ public class Login implements Initializable {
     public static String passName;
     public Label message;
     public MFXButton okButton;
+    public MFXProgressSpinner progress;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,12 +47,13 @@ public class Login implements Initializable {
         }
     }
 
-    public void LoginAction() throws IOException {
+    public void LoginAction() throws IOException, InterruptedException {
         setValue();
         Connection conn = new Database().connection();
         if (conn != null) {
             message.setText("Connect to " + databaseName + "successfully!");
             message.setStyle("-fx-text-fill: green");
+
 
             Parent root = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
             Scene scene = new Scene(root);
@@ -66,7 +69,7 @@ public class Login implements Initializable {
             Stage loginStage = (Stage) okButton.getScene().getWindow();
             loginStage.close();
         } else {
-            message.setText("Failed to connect to " + databaseName + ". Please check database, user, password again!");
+            message.setText(Database.logMessage + "\nFailed to connect to " + databaseName + ". Please check database, user, password again!");
             message.setStyle("-fx-text-fill: red");
         }
     }
