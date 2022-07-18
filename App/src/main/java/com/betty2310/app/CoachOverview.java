@@ -39,7 +39,7 @@ public class CoachOverview implements Initializable {
 
             CoachOverviewTable rowData = table.getSelectionModel().getSelectedItem();
             if (rowData == null) return;
-            Label text = new Label("You click on student id: " +rowData.getCoach_id() );
+            Label text = new Label("You click on student id: " + rowData.getCoach_id());
             text.setFont(new Font("Monaco", 20));
             Pane pane = new Pane();
             pane.getChildren().add(text);
@@ -51,7 +51,7 @@ public class CoachOverview implements Initializable {
     }
 
     public String handleQuery() {
-        String query =  "SELECT * FROM coach_overview"
+        String query = "SELECT * FROM coach_overview"
                 + " WHERE coach LIKE '%" + CoachPane.coachName + "%'"
                 + " AND club LIKE '%" + CoachPane.coachClub + "%'"
                 + ";";
