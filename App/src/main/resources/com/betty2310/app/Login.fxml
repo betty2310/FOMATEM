@@ -2,14 +2,15 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="242.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.betty2310.app.Login">
    <children>
-      <VBox layoutX="90.0" prefHeight="250.0" prefWidth="236.0" spacing="30.0">
+      <VBox layoutX="90.0" prefHeight="313.0" prefWidth="236.0" spacing="30.0">
          <children>
             <Pane prefHeight="21.0" prefWidth="236.0" />
             <MFXTextField fx:id="database" floatMode="ABOVE" floatingText="Database" prefHeight="30.0" prefWidth="243.0" promptText="Enter database name" />
@@ -17,6 +18,11 @@
             <MFXTextField fx:id="pass" floatMode="ABOVE" floatingText="Password" prefHeight="30.0" prefWidth="243.0" promptText="Enter password" />
          </children>
       </VBox>
-      <MFXButton fx:id="ok" layoutX="397.0" layoutY="210.0" stylesheets="@style.css" />
+      <MFXButton fx:id="okButton" layoutX="401.0" layoutY="238.0" onAction="#LoginAction" stylesheets="@style.css" text="Login" />
+      <Label fx:id="message" layoutX="204.0" layoutY="271.0" prefHeight="36.0" prefWidth="273.0" wrapText="true">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
