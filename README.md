@@ -39,8 +39,12 @@ Read [wiki](https://github.com/betty2310/FOMATEM/wiki) for more details.
 2. Create local database in your machine
     ```bash
     $ createdb football_manager
-    $ cd FOMATEM/data/
-    $ psql -d football_manager -f ../createDB.sql
+    $ cd FOMATEM/sql/
+    $ psql -d football_manager -f createDB.sql
+    $ psql -d football_manager -f function_trigger.sql
+    $ psql -d football_manager -f view.sql
+    $ cd ../data
+    $ psql -d football_manager -f ../sql/getData.sql
     ```
 3. Run the application
     ```bash
