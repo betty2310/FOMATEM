@@ -6,12 +6,12 @@ An application to manage fooballer's information. Use [PostgreSQL](https://www.p
 
 # Features
 
-+ Connect to local database `footballer_manager`
-+ Over 112000 players, 4000 clubs and 5000 total coachs (*notes that all is sample data*)
++ Connect to local database `footballer_manager` via login scene
++ Over 112000 players, 4000 clubs and 5000 total coachs (*notes that all are sample data*)
 + List footballer's information overview as required
 + View footballer's information detail (also with club and coach)
 + View log of each action modifying infomation
-+ Cross platform application (with all requirements :v)
++ Cross platform (with all requirements :v)
 
 You can see showcase of the application in [showcase](./showcase.md)
 # Documentation
