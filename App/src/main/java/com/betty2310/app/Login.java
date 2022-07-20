@@ -30,7 +30,6 @@ public class Login implements Initializable {
     public static String passName;
     public Label message;
     public MFXButton okButton;
-    public MFXProgressSpinner progress;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,7 +46,7 @@ public class Login implements Initializable {
         }
     }
 
-    public void LoginAction() throws IOException, InterruptedException {
+    public void LoginAction() throws IOException {
         setValue();
         Connection conn = new Database().connection();
         if (conn != null) {

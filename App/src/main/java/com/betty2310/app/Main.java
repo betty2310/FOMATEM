@@ -19,9 +19,6 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Scene scene = new Scene(root);
-//        Parent root = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
-//        Scene scene = new Scene(root);
-//        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Login to FOMATEM");
         stage.initStyle(StageStyle.UNIFIED);
