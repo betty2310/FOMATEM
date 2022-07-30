@@ -2,7 +2,6 @@ module com.betty2310.app {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires org.postgresql.jdbc;
     requires MaterialFX;
 
 

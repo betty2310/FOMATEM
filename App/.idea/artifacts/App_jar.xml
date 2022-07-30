@@ -17,7 +17,6 @@
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/18/javafx-fxml-18.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Downloads/jar_files/virtualizedfx-11.2.6.jar" path-in-jar="/" />
       <element id="library" level="project" name="de.jensd.fontawesomefx" />
-      <element id="library" level="project" name="materialfx-11.14.0-EA3" />
       <element id="library" level="project" name="Maven: org.openjfx:javafx-base:18" />
       <element id="library" level="project" name="Maven: org.openjfx:javafx-base:mac:18" />
       <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:18" />
@@ -26,7 +25,6 @@
       <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:mac:18" />
       <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:18" />
       <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:mac:18" />
-      <element id="library" level="project" name="postgresql-42.3.6" />
       <element id="library" level="project" name="virtualizedfx-11.2.6" />
       <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18.0.1/lib/javafx-swt.jar" />
       <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18.0.1/lib/javafx.web.jar" />
@@ -36,6 +34,8 @@
       <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18.0.1/lib/javafx.swing.jar" />
       <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18.0.1/lib/javafx.controls.jar" />
       <element id="file-copy" path="$USER_HOME$/Downloads/javafx-sdk-18.0.1/lib/javafx.graphics.jar" />
+      <element id="library" level="application" name="postgresql-42.3.6" />
+      <element id="library" level="application" name="materialfx-11.14.0-EA3" />
     </root>
   </artifact>
 </component>
