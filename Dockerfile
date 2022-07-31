@@ -1,11 +1,19 @@
-FROM openjdk:16-alpine3.13
+FROM postgres
 
-WORKDIR /App
+ADD https://github.com/betty2310/FOMATEM .
+COPY sql/* .
 
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
+RUN createdb football_manager \
+    && psql -d football_manager -f createDB.sql \
+    psql -d football_manager -f function_trigger.sql \
+    sql -d football_manager -f view.sql
 
-COPY src ./src
+COPY data/* .
+RUN psql -d football_manager -f getData.sql
 
-CMD ["./mvnw", "spring-boot:run"]
+FROM platpus/javafx
+FROM openjdk:11
+
+ADD https://github.com/betty2310/FOMATEM/releases/download/v1.2.0/App.jar .
+
+ENTRYPOINT [ "java", "-jar", "App.jar", "--add-modules=javafx.controls,javafx.fxml"]
