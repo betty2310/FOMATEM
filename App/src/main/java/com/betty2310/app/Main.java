@@ -9,8 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 
 import java.io.IOException;
 
@@ -21,7 +19,6 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Login to FOMATEM");
-        stage.initStyle(StageStyle.UNIFIED);
         stage.getIcons().add(new Image(String.valueOf(getClass().getResource("icon/ball.png"))));
         stage.show();
     }

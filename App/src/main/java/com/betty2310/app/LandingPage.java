@@ -22,6 +22,7 @@ public class LandingPage {
     private Pane pnClub;
     @FXML
     private Pane pnFootballer;
+
     @FXML
     protected void handleClickSidebar(ActionEvent event) throws IOException {
         if (event.getSource() == btFootballer) {
@@ -44,12 +45,6 @@ public class LandingPage {
             pnCoach.toFront();
         }
         if (event.getSource() == btHome) {
-            pnHome.toFront();
-        }
-    }
-
-    public void returnHome(MouseEvent mouseEvent)  {
-        if (mouseEvent.getClickCount() == 2 && !mouseEvent.isConsumed()) {
             pnHome.toFront();
         }
     }
