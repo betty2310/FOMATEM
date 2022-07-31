@@ -55,7 +55,9 @@ Read [wiki](https://github.com/betty2310/FOMATEM/wiki) for more details.
 Congrats! You can now use this app.
 ![](./assets/app.png)
 
-### 
+## Using docker
+
+- [ ] In progress
 
 # Author
 
