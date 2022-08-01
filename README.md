@@ -1,4 +1,20 @@
-# Football Management System ⚽🏟️ 
+<p align=center>
+  <img height="150px" src="docs/static/img/getsynth_favicon.png"/>
+</p>
+<p align=center>
+  <b>The Footballer Management System⚽🏟️</b>
+</p>
+<br>
+<p align=center>
+  <a href="https://github.com/betty2310/FOMATEM/wiki"><img alt="wiki" src="https://img.shields.io/badge/doc-reference-orange"></a>
+  <a href="https://github.com/betty2310/FOMATEM/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/badge/license-Apache_2.0-green.svg"></a>
+  <a href="https://github.com/getsynth/synth/search?l=rust"><img alt="language" src="https://img.shields.io/badge/language-Rust-orange.svg"></a>
+  <a href="https://github.com/getsynth/synth/actions"><img alt="build status" src="https://img.shields.io/github/workflow/status/getsynth/synth/synth%20public%20cachix"/></a>
+  <a href="https://discord.gg/H33rRDTm3p"><img alt="discord" src="https://img.shields.io/discord/803236282088161321?logo=discord"/></a>
+      <img src="https://img.shields.io/github/all-contributors/getsynth/synth" alt="Synth open source contributors"/>
+</p>
+
+------
 
 An application to manage fooballer's information. Use [PostgreSQL](https://www.postgresql.org/) as local database.
 
