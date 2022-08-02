@@ -4,11 +4,12 @@
 <p align=center>
   <b>The Footballer Management System⚽🏟️</b>
 </p>
-<br>
 <p align=center>
   <a href="https://github.com/betty2310/FOMATEM/wiki"><img alt="wiki" src="https://img.shields.io/badge/doc-reference-blue"></a>
   <a href="https://github.com/betty2310/FOMATEM/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-green.svg"></a>
   <a href="https://github.com/betty2310/FOMATEM/search?l=java"><img alt="language" src="https://img.shields.io/badge/language-Java-orange.svg"></a>
+  <a href="https://github.com/betty2310/FOMATEM/wiki"><img alt="wiki" src="https://img.shields.io/tokei/lines/github/betty2310/FOMATEM"></a>
+
 </p>
 
 ------
